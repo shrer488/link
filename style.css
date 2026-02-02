@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root{
+      font-family: "Zalando Sans Expanded", sans-serif;
+      
+      --text-color: #08183A;
+      
+      --spacing: 1.5rem;
+      
+      --h1-size: 2rem;
+      color: var(--text-color);
+    }
+    
+    body{
+        main{
+            .hero{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                padding-inline: var(--spacing);
+                
+                h1{
+                font-size: var(--h1-size) ;
+                font-weight: 600;
+                margin-block-end: 0;
+            }
+            
+            p{
+                text-align: center;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+@media (width>650px) {
+    body{
+        main{
+            .hero{
+
+                p{
+                        margin: 0 auto;
+                        max-width: 40rem;
+                    }
+            }
+        }
+    }
+}
