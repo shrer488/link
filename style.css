@@ -22,27 +22,57 @@
                 padding-inline: var(--spacing);
                 
                 h1{
-                font-size: var(--h1-size) ;
-                font-weight: 600;
-                margin-block-end: 0;
-            }
+                    font-size: var(--h1-size) ;
+                    font-weight: 700;
+                    margin-block-end: 0.5rem;
+                }
             
-            p{
+                p{
                 text-align: center;
                 margin: 0 auto;
-            }
+                margin-block-end: 0.8rem;
+                color: #08183aca;
+                }
+
+                .arena{
+                    display: flex;
+                    align-items: center;
+                    gap: var(--spacing);
+                    border: 0.08rem solid var(--text-color);
+                    border-radius: 2rem;
+                    padding-block: 0.3rem;
+                    padding-inline: 0.5rem;
+
+                }
+        }
+
+        .content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
     }
 }
 
 @media (width>650px) {
+
+:root{
+      --h1-size: 3rem;
+
+}
     body{
         main{
             .hero{
+                h1{
+                }
 
                 p{
                         margin: 0 auto;
                         max-width: 40rem;
+                margin-block-end: 0.8rem;
+
                     }
             }
         }
