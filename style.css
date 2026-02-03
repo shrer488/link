@@ -79,12 +79,28 @@
                         height: 12rem;
                         width: 12rem;
                         border: var(--border-width) solid var(--text-color);
-                        
+                        border-radius: 2rem;
                     }
                 }
             }
+
+            
             
         }
+
+        .content-2{
+
+                ul{
+                    display: grid;
+                    grid-template-columns: repeat(6, 1fr);
+                    li{
+                        height: 12rem;
+                        width: 12rem;
+                        border: var(--border-width) solid var(--text-color);
+                        border-radius: 2rem;
+                    }
+                }
+            }
     }
 }
 

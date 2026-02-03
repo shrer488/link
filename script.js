@@ -1,5 +1,11 @@
-let imageA= document.querySelector('imageA')
+let modalButton = document.querySelector('.modal')
+let modalDialog = document.querySelector('.dialog')
+let closeButton = modalDialog.querySelector('button')
 
-document.querySelector('imageA').addEventListener('click', () => {
-   alert('The button was clicked!') // Pop an alert!
+modalButton.addEventListener('click',()=>{
+    modalDialog.showModal()
+})
+
+closeButton.addEventListener('click', ()=>{
+    modalDialog.close()
 })
