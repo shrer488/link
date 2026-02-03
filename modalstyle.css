@@ -1,13 +1,4 @@
 dialog{
-    /* Added a frosty blurred background for modal */
-    /* From https://css.glass */
-    /* Here we are adding a tinted background with low opacity then adding backdrop filter that blurs the stuffs behind the modal */
-
-    background: rgba(47, 62, 94, 0.26);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(9.4px);
-    -webkit-backdrop-filter: blur(9.4px);
-    border: 1px solid rgba(47, 62, 94, 0.03);
-    height: 100%;
-    width: 100%;
+    
+    
 }
