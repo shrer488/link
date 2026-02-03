@@ -14,10 +14,7 @@
     body{
         main{
             .hero{
-                background-image: url("Images/[t×6s]_[b6f5cd84-8ca1-4d34-a0bb-c2d0ed6051ec]_2026-02-02_15-00-57.png");
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: center;
+                
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -25,29 +22,33 @@
                 height: 100vh;
                 padding-inline: var(--spacing);
                 
-                h1{
-                    font-size: var(--h1-size) ;
-                    font-weight: 700;
-                    margin-block-end: 0.5rem;
+                .hero-text{
+                    text-align: center;
+                    h1{
+                        font-size: var(--h1-size) ;
+                        font-weight: 700;
+                        margin-block-end: 0.5rem;
+                    }
+                
+                    p{
+                    text-align: center;
+                    margin: 0 auto;
+                    margin-block-end: 0.8rem;
+                    color: #08183aca;
+                    }
+    
+                    .arena{
+                        display: flex;
+                        align-items: center;
+                        gap: var(--spacing);
+                        border: 0.08rem solid var(--text-color);
+                        border-radius: 2rem;
+                        padding-block: 0.3rem;
+                        padding-inline: 0.5rem;
+    
+                    }
                 }
-            
-                p{
-                text-align: center;
-                margin: 0 auto;
-                margin-block-end: 0.8rem;
-                color: #08183aca;
-                }
-
-                .arena{
-                    display: flex;
-                    align-items: center;
-                    gap: var(--spacing);
-                    border: 0.08rem solid var(--text-color);
-                    border-radius: 2rem;
-                    padding-block: 0.3rem;
-                    padding-inline: 0.5rem;
-
-                }
+                
         }
 
         .content{
@@ -65,12 +66,41 @@
                     font-size: 1.5rem;
                     text-transform: uppercase;
                     font-weight: 600;
+
+                    .wheel{
+                        display: flex;
+                        flex-direction: row;
+
+                        li{
+                            width: 12rem;
+                            height: 12rem;
+                        }
+
+                    }
                 }
 
             }
         }
     }
 }
+
+@media (width>500px) {
+    
+body{
+    main{
+        .hero{
+            .butterfly-image{
+                    display: none;
+                }
+                background-image: url("Images/[t×6s]_[b6f5cd84-8ca1-4d34-a0bb-c2d0ed6051ec]_2026-02-02_15-00-57.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+        }
+    }
+}
+}
+
 
 @media (width>650px) {
 
@@ -81,6 +111,10 @@
     body{
         main{
             .hero{
+                .hero-text{
+                    background: white;
+                }
+                
                 h1{
                 }
 
