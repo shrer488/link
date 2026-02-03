@@ -6,6 +6,7 @@
       --text-color: #08183A;
       
       --spacing: 1.5rem;
+      --border-width: 0.08rem;
       
       --h1-size: 2rem;
       color: var(--text-color);
@@ -41,7 +42,7 @@
                         display: flex;
                         align-items: center;
                         gap: var(--spacing);
-                        border: 0.08rem solid var(--text-color);
+                        border: var(--border-width) solid var(--text-color);
                         border-radius: 2rem;
                         padding-block: 0.3rem;
                         padding-inline: 0.5rem;
@@ -52,34 +53,35 @@
         }
 
         .content{
-            
-            ul{
-                height: 100vh;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                gap: var(--spacing);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: var(--spacing);
 
-                li{
+            details{
+
+                summary{
                     font-size: 1.5rem;
-                    text-transform: uppercase;
-                    font-weight: 600;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                }
+                
+                .wheel{
+                    display: flex;
+                    gap: var(--spacing);
 
-                    .wheel{
-                        display: flex;
-                        flex-direction: row;
-
-                        li{
-                            width: 12rem;
-                            height: 12rem;
-                        }
-
+                    .wheel-content{
+                        height: 12rem;
+                        width: 12rem;
+                        border: var(--border-width) solid var(--text-color);
+                    
                     }
                 }
-
             }
+            
         }
     }
 }
