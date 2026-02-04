@@ -115,6 +115,7 @@
                 position: fixed;
                 inset: 0; 
                 z-index: 1000;
+                overscroll-behavior: contain;
 
                 padding: var(--spacing);
 
@@ -135,10 +136,18 @@
                         }
                     }
                 }
+
+
             }
+
+            /* dialog::backdrop{
+                overflow: hidden;
+                overscroll-behavior: contain;
+            } */
             }
     }
 }
+body:has(dialog[open]) { overflow: hidden; }
 
 @media (width>500px) {
 
@@ -190,6 +199,27 @@ body{
             .content{
                 margin-block-start: calc(var(--spacing)*10);
 
+                dialog{
+
+                    ul{
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+                    gap: var(--spacing);
+
+                    li{
+                        img{
+                            height: 16rem;
+                            width: 16rem;
+                            border: var(--border-width) solid var(--text-color);
+                            border-radius: 2rem;
+                            object-fit: cover;
+                            overflow: hidden;
+                        }
+                    }
+                }
+
+
+                }
             }
         }
     }
