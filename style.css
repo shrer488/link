@@ -145,7 +145,10 @@
                             overflow: hidden;
                         }
 
-                        p{
+                        a{
+                            display: block;
+                        }
+                        p, a {
                             font-size: 1rem;
                             font-weight: 600;
                             padding: var(--spacing);
@@ -155,10 +158,16 @@
                             box-shadow: va(--blur-background-box-shadow);
                             backdrop-filter: var(--blur-background-backdrop-filter);
                         }
+
+                        a:hover{
+                            background: white;
+                        }
+                        
+
                     }
                 }
 
-                
+
 
 
             }
