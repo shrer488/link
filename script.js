@@ -2,7 +2,9 @@
 let imageModalButton = document.querySelector('.image-modal')
 let videoModalButton = document.querySelector ('.video-modal')
 let linkModalButton = document.querySelector ('.link-modal')
-let gifkModalButton = document.querySelector ('.gif-modal')
+let gifModalButton = document.querySelector ('.gif-modal')
+let textModalButton = document.querySelector ('.text-modal')
+
 
 
 // Dialog/popup boxes
@@ -10,6 +12,8 @@ let imageDialog = document.querySelector('.image-dialog')
 let videoDialog = document.querySelector('.video-dialog')
 let linkDialog = document.querySelector('.link-dialog')
 let gifDialog = document.querySelector('.gif-dialog')
+let textDialog = document.querySelector('.text-dialog')
+
 
 
 // Close buttons
@@ -17,6 +21,8 @@ let imageClose = imageDialog.querySelector('button')
 let videoClose = videoDialog.querySelector('button')
 let linkClose = linkDialog.querySelector('button')
 let gifClose = gifDialog.querySelector('button')
+let textClose = textDialog.querySelector('button')
+
 
 
 // -----------------------------------------------------------------
@@ -46,7 +52,15 @@ linkClose.addEventListener('click', ()=>{
 })
 
 // Gifs
-gifkModalButton.addEventListener('click',()=>{
+textModalButton.addEventListener('click',()=>{
+    textDialog.showModal()
+})
+textClose.addEventListener('click', ()=>{
+    textDialog.close()
+})
+
+// Gifs
+gifModalButton.addEventListener('click',()=>{
     gifDialog.showModal()
 })
 gifClose.addEventListener('click', ()=>{

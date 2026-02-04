@@ -13,6 +13,11 @@
       color: var(--text-color);
 
       scroll-behavior: smooth;
+
+      --blur-background-color: rgba(47, 62, 94, 0.26);
+      --blur-background-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      --blur-background-backdrop-filter: blur(9.4px);
+                         
     }
     
     body{
@@ -92,12 +97,14 @@
             text-align: center;
             gap: var(--spacing);
             
-            
-            p{
-                font-size: 1.5rem;
-                text-transform: uppercase;
-                font-weight: 600;
+            button{
+                p{
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                }
             }
+            
 
             
             
@@ -124,6 +131,9 @@
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
                     gap: var(--spacing);
+                    align-content: center;
+                    justify-content: space-evenly;
+
 
                     li{
                         img{
@@ -133,6 +143,16 @@
                             border-radius: 2rem;
                             object-fit: cover;
                             overflow: hidden;
+                        }
+
+                        p{
+                            font-size: 1rem;
+                            padding: var(--spacing);
+                            border: var(--border-width) solid var(--text-color);
+                            border-radius: 2rem;
+                            background-color: rgba(255, 255, 255, 0.639);
+                            box-shadow: va(--blur-background-box-shadow);
+                            backdrop-filter: var(--blur-background-backdrop-filter);
                         }
                     }
                 }
@@ -191,7 +211,7 @@ body{
                 p{
                         margin: 0 auto;
                         max-width: 40rem;
-                margin-block-end: 0.8rem;
+                        margin-block-end: 0.8rem;
 
                     }
             }
@@ -215,6 +235,7 @@ body{
                             object-fit: cover;
                             overflow: hidden;
                         }
+
                     }
                 }
 
