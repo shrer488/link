@@ -147,6 +147,7 @@
 
                         p{
                             font-size: 1rem;
+                            font-weight: 600;
                             padding: var(--spacing);
                             border: var(--border-width) solid var(--text-color);
                             border-radius: 2rem;
@@ -156,6 +157,8 @@
                         }
                     }
                 }
+
+                
 
 
             }
