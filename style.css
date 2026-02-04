@@ -11,6 +11,8 @@
       
       --h1-size: 2rem;
       color: var(--text-color);
+
+      scroll-behavior: smooth;
     }
     
     body{
@@ -61,7 +63,7 @@
                     border: var(--border-width) solid var(--text-color);
                     border-radius: 2rem;
                     padding-block: 0.3rem;
-                    padding-inline: 0.5rem;
+                    padding-inline: 0.8rem;
                     width: fit-content;
                 }
                  
@@ -86,6 +88,7 @@
             gap: var(--spacing);
             
             .modal{
+
                 p{
                     font-size: 1.5rem;
                     text-transform: uppercase;
@@ -97,12 +100,18 @@
                 /* Added a frosty blurred background for modal */
                 /* From https://css.glass */
                 /* Here we are adding a tinted background with low opacity then adding backdrop filter that blurs the stuffs behind the modal */
-
                 background: rgba(47, 62, 94, 0.26);
                 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
                 backdrop-filter: blur(9.4px);
                 
-                /* height: 100%; */
+
+                /* Was having trouble with the modal not taking full height so asked chatgpt.  */
+                /* Apparently the dialog is inside a container with limited height and it was inheriting that height so I think the inset fixes that  */
+                position: fixed;
+                inset: 0; 
+                z-index: 1000;
+
+
                 width: 100%;
                 padding: var(--spacing);
 
@@ -142,7 +151,7 @@ body{
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
-            
+                   
             .butterfly-image{
                     display: none;
                 }
