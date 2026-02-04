@@ -56,15 +56,20 @@
                     
                 }
 
+
+                
                 a{
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
-                    border: var(--border-width) solid var(--text-color);
-                    border-radius: 2rem;
                     padding-block: 0.3rem;
                     padding-inline: 0.8rem;
                     width: fit-content;
+                    border-radius: 2rem;
+                }
+                
+                .collection{
+                    border: var(--border-width) solid var(--text-color);
                 }
                  
                 a:hover{
@@ -87,14 +92,14 @@
             text-align: center;
             gap: var(--spacing);
             
-            .modal{
-
-                p{
-                    font-size: 1.5rem;
-                    text-transform: uppercase;
-                    font-weight: 600;
-                }
+            
+            p{
+                font-size: 1.5rem;
+                text-transform: uppercase;
+                font-weight: 600;
             }
+
+            
             
             dialog{
                 /* Added a frosty blurred background for modal */
@@ -106,13 +111,11 @@
                 
 
                 /* Was having trouble with the modal not taking full height so asked chatgpt.  */
-                /* Apparently the dialog is inside a container with limited height and it was inheriting that height so I think the inset fixes that  */
+                /* Apparently the dialog is inside a container with limited height and it was inheriting that height so I think this code makes it cover the entire viewport by defining its position and moving it to the top of the screen.  */
                 position: fixed;
                 inset: 0; 
                 z-index: 1000;
 
-
-                width: 100%;
                 padding: var(--spacing);
 
 
