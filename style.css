@@ -2,11 +2,12 @@
 
 :root{
       font-family: "Zalando Sans Expanded", sans-serif;
+      font-size: 0.9rem;
       
       --text-color: #08183A;
       
       --spacing: 1.5rem;
-      --border-width: 0.08rem;
+      --border-width: 0.05rem;
       
       --h1-size: 2rem;
       color: var(--text-color);
@@ -18,77 +19,63 @@
                 
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: space-between;
                 align-items: center;
                 height: 100vh;
-                padding-inline: var(--spacing);
+                padding: var(--spacing);
                 
                 .hero-text{
                     text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    gap: calc(var(--spacing)/2);
+
+                    .butterfly-image{
+                        /* margin-block-end: var(--spacing); */
+                    }
+
+                    
                     h1{
                         font-size: var(--h1-size) ;
                         font-weight: 700;
-                        margin-block-end: 0.5rem;
+                        display: inline;
                     }
-                
+                    
                     p{
-                    text-align: center;
-                    margin: 0 auto;
-                    margin-block-end: 0.8rem;
-                    color: #08183aca;
+                        text-align: center;
+                        margin: 0 auto;
+                        color: #08183aa9;
                     }
-    
-                    .arena{
-                        display: flex;
-                        align-items: center;
-                        gap: var(--spacing);
-                        border: var(--border-width) solid var(--text-color);
-                        border-radius: 2rem;
-                        padding-block: 0.3rem;
-                        padding-inline: 0.5rem;
-    
+                    
+                    h1,p{
+                        background: rgba(255, 255, 255, 0.636);
+                        box-shadow: 0px 0px 20px 12px rgba(255, 255, 255, 0.636);
                     }
+                    
                 }
+
+                a{
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5rem;
+                    border: var(--border-width) solid var(--text-color);
+                    border-radius: 2rem;
+                    padding-block: 0.3rem;
+                    padding-inline: 0.5rem;
+                    width: fit-content;
+                }
+                 
+                a:hover{
+                        background: rgba(47, 62, 94, 0.26);
+                        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                         backdrop-filter: blur(9.4px);
+                    }
+
+                    
                 
         }
 
         .content{
-            /* height: 100vh; */
-            margin-block-start: calc(var(--spacing)*2);
-            margin-block-end: calc(var(--spacing)*8);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            gap: var(--spacing);
-
-            details{
-
-                summary{
-                    font-size: 1.5rem;
-                        text-transform: uppercase;
-                        font-weight: 600;
-                }
-                
-                .content-image,.content-video{
-                    display: flex;
-                    gap: var(--spacing);
-
-                    li{
-                        height: 12rem;
-                        width: 12rem;
-                        border: var(--border-width) solid var(--text-color);
-                        border-radius: 2rem;
-                    }
-                }
-            }
-
-            
-            
-        }
-
-        .content-2{
             margin-block-start: calc(var(--spacing)*2);
             margin-block-end: calc(var(--spacing)*8);
             display: flex;
@@ -142,17 +129,23 @@
 }
 
 @media (width>500px) {
+
+    :root{
+      --h1-size: 2.5rem;
+      font-size: 1rem;
+}
     
 body{
     main{
         .hero{
+            background-image: url("Images/[t×6s]_[b6f5cd84-8ca1-4d34-a0bb-c2d0ed6051ec]_2026-02-02_15-00-57.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            
             .butterfly-image{
                     display: none;
                 }
-                background-image: url("Images/[t×6s]_[b6f5cd84-8ca1-4d34-a0bb-c2d0ed6051ec]_2026-02-02_15-00-57.png");
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: center;
         }
     }
 }
@@ -163,13 +156,12 @@ body{
 
 :root{
       --h1-size: 3rem;
-
+      font-size: 1rem;
 }
     body{
         main{
             .hero{
                 .hero-text{
-                    background: white;
                 }
                 
                 h1{
