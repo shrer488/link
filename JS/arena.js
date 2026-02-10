@@ -28,6 +28,7 @@ let placeChannelInfo = (channelData) => {
 
 // Then our big function for specific-block-type rendering:
 let renderBlock = (blockData) => {
+	
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.querySelector('#channel-blocks')
 
@@ -155,15 +156,13 @@ let renderBlock = (blockData) => {
 
 
 // A function to display the owner/collaborator info:
-let renderUser = (userData) => {
+let renderUser = (userData) => {  
 	let channelUsers = document.querySelector('#channel-users') // Container.
 
 	let userAddress =
 		`
-		<address>
-			<img src="${ userData.avatar }">
-			<h3>${ userData.name }</h3>
-			<p><a href="https://are.na/${ userData.slug }">Are.na profile ↗</a></p>
+		<address> 			
+			<p><a href="https://are.na/${ userData.slug }">${ userData.name }</a></p>
 		</address>
 		`
 
