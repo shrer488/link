@@ -73,11 +73,47 @@ let renderBlock = (blockData) => {
 
 	// Images!
 	else if (blockData.type == 'Image') {
+		
+
+		let imageItem =
+		`
+		<h1>Imageeee</h1>
+		<div>
+		<img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }"> 
+		</div>
+		<div>
+            <button class="image-modal">
+             <p>Captures</p>
+             </button>
+             <dialog class="image-dialog" closedby="any">
+             	<button>Close</button>
+            	<ul>
+                     <li>
+					 <img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
+					 </li>       
+                </ul>
+               </dialog>
+                </div>
+		
+		
+		`
+
+		console.log(imageItem)
+		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
+
+
 		// …up to you!
 	}
 
 	// Text!
 	else if (blockData.type == 'Text') {
+		let textItem =
+		`
+		<h1>Textttt</h1>
+		<div>
+		 <p>${blockData.content.plain}</p>
+		</div>		`
+		channelBlocks.insertAdjacentHTML('beforeend', textItem)
 		// …up to you!
 	}
 
