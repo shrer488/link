@@ -68,7 +68,6 @@ let renderBlock = (blockData) => {
 		</div>
 		`
 
-		console.log(imageItem)
 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 
 
