@@ -38,27 +38,13 @@ let renderBlock = (blockData) => {
 		let linkItem =
 			`
 			<li>
-				<p><em>Link</em></p>
 				<figure>
 					<picture>
 						<source media="(width < 500px)" srcset="${ blockData.image.small.src_2x }">
 						<source media="(width < 1000px)" srcset="${ blockData.image.medium.src_2x }">
 						<img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
 					</picture>
-					<figcaption>
-						<h3>
-							${ blockData.title
-								? blockData.title // If `blockData.title` exists, do this.
-								: `Untitled` // Otherwise do this.
-
-								// This is a “ternary operator”: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator
-							}
-						</h3>
-						${ blockData.description // Here, checks for the object; could also write `blockData.description?.html`.
-							? `<div>${blockData.description.html}</div>` // Wrap/interpolate the HTML.
-							: `` // Our “otherwise” can also be blank!
-						}
-					</figcaption>
+					
 				</figure>
 				<p><a href="${ blockData.source.url }">See the original ↗</a></p>
 			</li>
@@ -77,25 +63,9 @@ let renderBlock = (blockData) => {
 
 		let imageItem =
 		`
-		<h1>Imageeee</h1>
 		<div>
-		<img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }"> 
+		<img class="content-size" alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }"> 
 		</div>
-		<div>
-            <button class="image-modal">
-             <p>Captures</p>
-             </button>
-             <dialog class="image-dialog" closedby="any">
-             	<button>Close</button>
-            	<ul>
-                     <li>
-					 <img alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
-					 </li>       
-                </ul>
-               </dialog>
-                </div>
-		
-		
 		`
 
 		console.log(imageItem)
@@ -109,9 +79,8 @@ let renderBlock = (blockData) => {
 	else if (blockData.type == 'Text') {
 		let textItem =
 		`
-		<h1>Textttt</h1>
 		<div>
-		 <p>${blockData.content.plain}</p>
+		 <p class="content-size">${blockData.content.plain}</p>
 		</div>		`
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)
 		// …up to you!
@@ -128,7 +97,7 @@ let renderBlock = (blockData) => {
 				`
 				<li>
 					<p><em>Video</em></p>
-					<video controls src="${ blockData.attachment.url }"></video>
+					<video class="content-size" controls src="${ blockData.attachment.url }"></video>
 				</li>
 				`
 

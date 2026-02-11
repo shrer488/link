@@ -75,39 +75,32 @@
                 }
 
 
-                
-                button,a{
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    width: fit-content;
-                    border-radius: 2rem;
-                    padding-block: 0.3rem;
-                    padding-inline: 0.8rem;
-                }
-                
-                button{
-                    border: var(--border-width) solid var(--text-color);
-                }
-
-                button:hover, a:hover{
-                        background: rgba(47, 62, 94, 0.26);
-                        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-                         backdrop-filter: blur(9.4px);
-                    }
+                .content{
+                            .collection-modal, a, #controls{
+                                border-radius: 2rem;
+                                padding-block: 0.3rem;
+                                padding-inline: 0.8rem;
+                                display: flex;
+                                align-items: center;
+                                gap: 0.5rem;
+                                width: fit-content;
+                            }
+                            
+                            button:hover, a:hover{
+                                    background: rgba(47, 62, 94, 0.26);
+                                    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                                    backdrop-filter: blur(9.4px);
+                                }
+                            
+                            button, #controls{
+                                border: var(--border-width) solid var(--text-color);
+                            }
+            
 
                     
-                
-                    .content{
-                        /* margin-block-start: calc(var(--spacing)*2);
-                        margin-block-end: calc(var(--spacing)*8); */
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        text-align: center;
-                        gap: var(--spacing);
-                    }
+                    
+                }
+
                     
                     dialog{
                         /* Added a frosty blurred background for modal */
@@ -124,7 +117,6 @@
                         inset: 0; 
                         z-index: 1000;
                         overflow-y: auto;
-        
                         padding: var(--spacing);
         
         
@@ -135,43 +127,31 @@
                             align-content: center;
                             justify-content: space-evenly;
         
-        
-                            li{
-                                img{
-                                    height: 12rem;
-                                    width: 12rem;
-                                    border: var(--border-width) solid var(--text-color);
-                                    border-radius: 2rem;
-                                    object-fit: cover;
-                                    overflow: hidden;
-                                }
-        
-                                a{
-                                    display: block;
-                                }
-                                p, a {
-                                    font-size: 1rem;
-                                    font-weight: 600;
-                                    padding: var(--spacing);
-                                    border: var(--border-width) solid var(--text-color);
-                                    border-radius: 2rem;
-                                    background-color: rgba(255, 255, 255, 0.639);
-                                    box-shadow: va(--blur-background-box-shadow);
-                                    backdrop-filter: var(--blur-background-backdrop-filter);
-                                }
-        
-                                a:hover{
-                                    background: white;
-                                }
-                                
-        
+                        }
+                        
+                        #controls{
+                            display: flex;
+                            
+                            button{
+                                border: none;
                             }
                         }
-        
-        
-        
-        
+                        
+
+                        .dialog-header{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+                         position: sticky;
+                         top: 0;
                     }
+
+                    .content-size{
+                        max-height: 12rem;
+                    } 
+                    }
+                    
         }
 
     }
@@ -248,7 +228,8 @@ body{
                     ul{
                     display: grid;
                     grid-template-columns: repeat(5, 1fr);
-                    gap: var(--spacing);
+                    grid-template-rows: auto;
+                    gap: calc(var(--spacing)*9);
 
                     li{
                         img{
@@ -260,6 +241,11 @@ body{
                             overflow: hidden;
                         }
 
+                    }
+
+                    .content-size{
+                        max-height: 30rem;
+                        /* aspect-ratio: 16/9; */
                     }
                 }
 

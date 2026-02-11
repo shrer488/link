@@ -1,5 +1,5 @@
 // Modal Buttons
-let imageModalButton = document.querySelector('.image-modal')
+let collectionModalButton = document.querySelector('.collection-modal')
 // let videoModalButton = document.querySelector ('.video-modal')
 // let linkModalButton = document.querySelector ('.link-modal')
 // let gifModalButton = document.querySelector ('.gif-modal')
@@ -8,7 +8,7 @@ let imageModalButton = document.querySelector('.image-modal')
 
 
 // Dialog/popup boxes
-let imageDialog = document.querySelector('.image-dialog')
+let collectionDialog = document.querySelector('.collection-dialog')
 // let videoDialog = document.querySelector('.video-dialog')
 // let linkDialog = document.querySelector('.link-dialog')
 // let gifDialog = document.querySelector('.gif-dialog')
@@ -17,7 +17,7 @@ let imageDialog = document.querySelector('.image-dialog')
 
 
 // Close buttons
-let imageClose = imageDialog.querySelector('button')
+let collectionClose = collectionDialog.querySelector('button')
 // let videoClose = videoDialog.querySelector('button')
 // let linkClose = linkDialog.querySelector('button')
 // let gifClose = gifDialog.querySelector('button')
@@ -28,11 +28,11 @@ let imageClose = imageDialog.querySelector('button')
 // -----------------------------------------------------------------
 
 // Image
-imageModalButton.addEventListener('click',()=>{
-    imageDialog.showModal()
+collectionModalButton.addEventListener('click',()=>{
+    collectionDialog.showModal()
 })
-imageClose.addEventListener('click', ()=>{
-    imageDialog.close()
+collectionClose.addEventListener('click', ()=>{
+    collectionDialog.close()
 })
 
 // // Video 
