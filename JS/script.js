@@ -1,5 +1,5 @@
-// // Modal Buttons
-// let imageModalButton = document.querySelector('.image-modal')
+// Modal Buttons
+let imageModalButton = document.querySelector('.image-modal')
 // let videoModalButton = document.querySelector ('.video-modal')
 // let linkModalButton = document.querySelector ('.link-modal')
 // let gifModalButton = document.querySelector ('.gif-modal')
@@ -7,8 +7,8 @@
 
 
 
-// // Dialog/popup boxes
-// let imageDialog = document.querySelector('.image-dialog')
+// Dialog/popup boxes
+let imageDialog = document.querySelector('.image-dialog')
 // let videoDialog = document.querySelector('.video-dialog')
 // let linkDialog = document.querySelector('.link-dialog')
 // let gifDialog = document.querySelector('.gif-dialog')
@@ -16,8 +16,8 @@
 
 
 
-// // Close buttons
-// let imageClose = imageDialog.querySelector('button')
+// Close buttons
+let imageClose = imageDialog.querySelector('button')
 // let videoClose = videoDialog.querySelector('button')
 // let linkClose = linkDialog.querySelector('button')
 // let gifClose = gifDialog.querySelector('button')
@@ -25,15 +25,15 @@
 
 
 
-// // -----------------------------------------------------------------
+// -----------------------------------------------------------------
 
-// // Image
-// imageModalButton.addEventListener('click',()=>{
-//     imageDialog.showModal()
-// })
-// imageClose.addEventListener('click', ()=>{
-//     imageDialog.close()
-// })
+// Image
+imageModalButton.addEventListener('click',()=>{
+    imageDialog.showModal()
+})
+imageClose.addEventListener('click', ()=>{
+    imageDialog.close()
+})
 
 // // Video 
 // videoModalButton.addEventListener('click',()=>{
@@ -68,17 +68,17 @@
 // })
 
 // ...existing code...
-const types = ['image', 'video', 'link', 'gif', 'text']
+// const types = ['image', 'video', 'link', 'gif', 'text']
 
-types.forEach(type => {
-  const modalBtn = document.querySelector(`.${type}-modal`)
-  const dialog = document.querySelector(`.${type}-dialog`)
-  if (!modalBtn || !dialog) return
-  const close = dialog.querySelector('button')
+// types.forEach(type => {
+//   const modalBtn = document.querySelector(`.${type}-modal`)
+//   const dialog = document.querySelector(`.${type}-dialog`)
+//   if (!modalBtn || !dialog) return
+//   const close = dialog.querySelector('button')
 
-  modalBtn.addEventListener('click', () => dialog.showModal())
-  if (close) close.addEventListener('click', () => dialog.close())
-})
+//   modalBtn.addEventListener('click', () => dialog.showModal())
+//   if (close) close.addEventListener('click', () => dialog.close())
+// })
 // ...existing code...
 
 

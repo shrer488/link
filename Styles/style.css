@@ -76,21 +76,21 @@
 
 
                 
-                a{
+                button,a{
                     display: flex;
                     align-items: center;
                     gap: 0.5rem;
-                    padding-block: 0.3rem;
-                    padding-inline: 0.8rem;
                     width: fit-content;
                     border-radius: 2rem;
+                    padding-block: 0.3rem;
+                    padding-inline: 0.8rem;
                 }
                 
-                .collection{
+                button{
                     border: var(--border-width) solid var(--text-color);
                 }
-                 
-                a:hover{
+
+                button:hover, a:hover{
                         background: rgba(47, 62, 94, 0.26);
                         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
                          backdrop-filter: blur(9.4px);
@@ -98,98 +98,82 @@
 
                     
                 
+                    .content{
+                        /* margin-block-start: calc(var(--spacing)*2);
+                        margin-block-end: calc(var(--spacing)*8); */
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        gap: var(--spacing);
+                    }
+                    
+                    dialog{
+                        /* Added a frosty blurred background for modal */
+                        /* From https://css.glass */
+                        /* Here we are adding a tinted background with low opacity then adding backdrop filter that blurs the stuffs behind the modal */
+                        background: rgba(47, 62, 94, 0.26);
+                        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                        backdrop-filter: blur(9.4px);
+                        
+        
+                        /* Was having trouble with the modal not taking full height so asked chatgpt.  */
+                        /* Apparently the dialog is inside a container with limited height and it was inheriting that height so I think this code makes it cover the entire viewport by defining its position and moving it to the top of the screen.  */
+                        position: fixed;
+                        inset: 0; 
+                        z-index: 1000;
+                        overflow-y: auto;
+        
+                        padding: var(--spacing);
+        
+        
+                        ul{
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            gap: var(--spacing);
+                            align-content: center;
+                            justify-content: space-evenly;
+        
+        
+                            li{
+                                img{
+                                    height: 12rem;
+                                    width: 12rem;
+                                    border: var(--border-width) solid var(--text-color);
+                                    border-radius: 2rem;
+                                    object-fit: cover;
+                                    overflow: hidden;
+                                }
+        
+                                a{
+                                    display: block;
+                                }
+                                p, a {
+                                    font-size: 1rem;
+                                    font-weight: 600;
+                                    padding: var(--spacing);
+                                    border: var(--border-width) solid var(--text-color);
+                                    border-radius: 2rem;
+                                    background-color: rgba(255, 255, 255, 0.639);
+                                    box-shadow: va(--blur-background-box-shadow);
+                                    backdrop-filter: var(--blur-background-backdrop-filter);
+                                }
+        
+                                a:hover{
+                                    background: white;
+                                }
+                                
+        
+                            }
+                        }
+        
+        
+        
+        
+                    }
         }
 
-        .content{
-            margin-block-start: calc(var(--spacing)*2);
-            margin-block-end: calc(var(--spacing)*8);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            gap: var(--spacing);
-            
-            button{
-                p{
-                    font-size: 1.5rem;
-                    text-transform: uppercase;
-                    font-weight: 600;
-                }
-            }
-            
-
-            
-            
-            dialog{
-                /* Added a frosty blurred background for modal */
-                /* From https://css.glass */
-                /* Here we are adding a tinted background with low opacity then adding backdrop filter that blurs the stuffs behind the modal */
-                background: rgba(47, 62, 94, 0.26);
-                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-                backdrop-filter: blur(9.4px);
-                
-
-                /* Was having trouble with the modal not taking full height so asked chatgpt.  */
-                /* Apparently the dialog is inside a container with limited height and it was inheriting that height so I think this code makes it cover the entire viewport by defining its position and moving it to the top of the screen.  */
-                position: fixed;
-                inset: 0; 
-                z-index: 1000;
-                overflow-y: auto;
-
-                padding: var(--spacing);
-
-
-                ul{
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: var(--spacing);
-                    align-content: center;
-                    justify-content: space-evenly;
-
-
-                    li{
-                        img{
-                            height: 12rem;
-                            width: 12rem;
-                            border: var(--border-width) solid var(--text-color);
-                            border-radius: 2rem;
-                            object-fit: cover;
-                            overflow: hidden;
-                        }
-
-                        a{
-                            display: block;
-                        }
-                        p, a {
-                            font-size: 1rem;
-                            font-weight: 600;
-                            padding: var(--spacing);
-                            border: var(--border-width) solid var(--text-color);
-                            border-radius: 2rem;
-                            background-color: rgba(255, 255, 255, 0.639);
-                            box-shadow: va(--blur-background-box-shadow);
-                            backdrop-filter: var(--blur-background-backdrop-filter);
-                        }
-
-                        a:hover{
-                            background: white;
-                        }
-                        
-
-                    }
-                }
-
-
-
-
-            }
-
-            /* dialog::backdrop{
-                overflow: hidden;
-                overscroll-behavior: contain;
-            } */
-            }
     }
 }
 body:has(dialog[open]) { overflow: hidden; }
@@ -258,7 +242,6 @@ body{
             }
 
             .content{
-                margin-block-start: calc(var(--spacing)*10);
 
                 dialog{
 
