@@ -214,7 +214,7 @@ footer{
 body{
     main{
         .hero{
-            background-image: url("/Images/hero-butterfly.png");
+            background-image: url("Images/hero-butterfly.png");
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
