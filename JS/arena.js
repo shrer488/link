@@ -163,11 +163,23 @@ let renderBlock = (blockData) => {
 let renderUser = (userData) => {  
 	let channelOwner = document.querySelector('#channel-owner') // Container.
 	console.log(userData) // See what we get back!
-	let userAddress =
-	
+	let channelUser = document.querySelector('#channel-user') // Container.
+
+	if (userData.slug == myUsername) {
+		
+		let userAddress =
 		`
 		<address>
-						
+			<p><a href="https://are.na/${ userData.slug }">${ userData.name }</a></p>
+		</address>
+		`
+		channelUser.insertAdjacentHTML('beforeend', userAddress)
+		return
+	}
+
+	let userAddress =
+		`
+		<address>
 			<p><a href="https://are.na/${ userData.slug }">${ userData.name }</a></p>
 		</address>
 		`
