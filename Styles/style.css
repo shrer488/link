@@ -73,6 +73,7 @@
                     }
                     
                 }
+                
 
 
                 .content{
@@ -122,11 +123,20 @@
         
                         ul{
                             display: grid;
-                            grid-template-columns: repeat(2, 1fr);
+                            grid-template-columns: repeat(3, 1fr);
                             gap: var(--spacing);
                             align-content: center;
                             justify-content: space-evenly;
-        
+                            
+                            li{
+
+                                .text{
+                                    background: rgba(255, 255, 255, 0.636);
+                                    box-shadow: 0px 0px 20px 12px rgba(255, 255, 255, 0.636);
+                                    text-align: center;
+                                    grid-column: 2;
+                                }
+                            }
                         }
                         
                         #controls{
@@ -145,11 +155,18 @@
                         align-items: center;
                          position: sticky;
                          top: 0;
+                         width: 100%;
                     }
 
                     .content-size{
-                        max-height: 12rem;
+                        /* max-height: 12rem; */
                     } 
+
+                    .content-size:hover{
+                        filter: blur(1rem);
+                    }
+
+                    
                     }
                     
         }
@@ -230,6 +247,7 @@ body{
                     grid-template-columns: repeat(5, 1fr);
                     grid-template-rows: auto;
                     gap: calc(var(--spacing)*9);
+                    
 
                     li{
                         img{
@@ -239,6 +257,7 @@ body{
                             border-radius: 2rem;
                             object-fit: cover;
                             overflow: hidden;
+                            mask-image: radial-gradient(black 50%, transparent 60%);
                         }
 
                     }

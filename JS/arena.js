@@ -63,9 +63,9 @@ let renderBlock = (blockData) => {
 
 		let imageItem =
 		`
-		<div>
+		<li>
 		<img class="content-size" alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }"> 
-		</div>
+		</li>
 		`
 
 		channelBlocks.insertAdjacentHTML('beforeend', imageItem)
@@ -78,9 +78,9 @@ let renderBlock = (blockData) => {
 	else if (blockData.type == 'Text') {
 		let textItem =
 		`
-		<div>
-		 <p class="content-size">${blockData.content.plain}</p>
-		</div>		`
+		<li>
+		 <p class="text">${blockData.content.plain}</p>
+		</li>		`
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)
 		// …up to you!
 	}
