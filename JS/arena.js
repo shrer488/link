@@ -63,7 +63,7 @@ let renderBlock = (blockData) => {
 
 		let imageItem =
 		`
-		<li class="content-size">
+		<li class="content-size images">
 		<img  alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }"> 
 		</li>
 		`
