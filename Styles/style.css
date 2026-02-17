@@ -136,32 +136,22 @@
                         padding: var(--spacing);
         
 
-                        .dialog-header{
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            z-index: 1;
-                            align-items: center;
-                            position: sticky;
-                            top: 0;
-                            /* width: 100vw; */
-                            /* min-height: 100%; */
-                            /* height: 100%; */
-                            
+                       
                             .close-button{
                                 position: sticky;
                                 top: 0;
                             }
                             
-                            #controls{
-                                position: sticky;
+                            .controls{
+                                position: fixed;
                                 display: flex;
+                                bottom: 0rem;
                                 
                                 button{
                                     border: none;
                                 }
                             }
-                        }
+                        
                         
 
                         /* Content list pulled from the channel blocks is displayed in a grid layout. 3 columns are defined and the content is spaced out evenly.  */
