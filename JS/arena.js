@@ -165,7 +165,8 @@ let renderUser = (userData) => {
 
 	let userAddress =
 		`
-		<address> 			
+		<address>
+						
 			<p><a href="https://are.na/${ userData.slug }">${ userData.name }</a></p>
 		</address>
 		`

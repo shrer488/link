@@ -31,6 +31,12 @@
                 height: 100vh;
                 padding: var(--spacing);
                 
+                .mobile-external-links{
+                    display: flex;
+                    gap: var(--spacing);
+                    /* margin-bottom: var(--spacing); */
+                }
+
                 .hero-text{
                     display: flex;
                     text-align: center;
@@ -70,6 +76,13 @@
 
                     p+p{
                         font-weight: 600;
+                    }
+
+                    .hero-content{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
                     }
                     
                 }
