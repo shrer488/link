@@ -96,7 +96,7 @@ let renderBlock = (blockData) => {
 				`
 				<li>
 					<p><em>Video</em></p>
-					<video class="content-size" controls src="${ blockData.attachment.url }"></video>
+					<video class="content-size" class="video" controls src="${ blockData.attachment.url }"></video>
 				</li>
 				`
 
@@ -161,9 +161,10 @@ let renderBlock = (blockData) => {
 
 // A function to display the owner/collaborator info:
 let renderUser = (userData) => {  
-	let channelUsers = document.querySelector('#channel-users') // Container.
-
+	let channelOwner = document.querySelector('#channel-owner') // Container.
+	console.log(userData) // See what we get back!
 	let userAddress =
+	
 		`
 		<address>
 						
@@ -171,7 +172,7 @@ let renderUser = (userData) => {
 		</address>
 		`
 
-	channelUsers.insertAdjacentHTML('beforeend', userAddress)
+	channelOwner.insertAdjacentHTML('beforeend', userAddress)
 }
 
 
