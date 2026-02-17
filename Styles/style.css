@@ -135,30 +135,7 @@
                         overflow-y: auto;
                         padding: var(--spacing);
         
-        
-                        ul{
-                            display: grid;
-                            grid-template-columns: repeat(3, 1fr);
-                            gap: var(--spacing);
-                            align-content: center;
-                            justify-content: space-evenly;
-                            
-                            li{
 
-                                .text{  
-                                    background: rgba(255, 255, 255, 0.636);
-                                    box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
-                                    text-align: center;
-                                    color: #08183ad4;
-                                    line-height: 1.6rem;
-                                    grid-column: 2;
-                                    padding: 1rem;
-                                    border-radius: 8rem;
-                                    max-width: 20rem;
-                                }
-                            }
-                        }
-                        
                         .dialog-header{
                             display: flex;
                             flex-direction: column;
@@ -183,18 +160,54 @@
                                 }
                             }
                         }
-
-                        
                         
 
+                        /* Content list pulled from the channel blocks is displayed in a grid layout. 3 columns are defined and the content is spaced out evenly.  */
+                        ul{
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            gap: var(--spacing);
+                            align-content: center;
+                            justify-content: space-evenly;
+                            
+                            li{
 
-                    .content-size{
-                        max-height: 12rem;
-                    } 
+                            }
+                            
+                            /* based on object style  */
+                            .text{ 
+                                /* making the text content come in the middle */
+                                grid-column: 2;
 
-                    .content-size:hover{
-                        filter: blur(1rem);
-                    }
+                                p{
+                                    background: rgba(255, 255, 255, 0.636);
+                                    box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
+                                    text-align: center;
+                                    color: #08183ad4;
+                                    line-height: 1.6rem;
+                                    padding: 1rem;
+                                    border-radius: 8rem;
+                                    max-width: 20rem;
+
+                                }
+                            }
+
+                            .content-size{
+                                max-height: 12rem;
+                            } 
+
+                            .content-size:hover{
+                                filter: blur(1rem);
+                            }
+
+
+                        }
+                        
+                        
+                        
+
+
+                    
 
                     
                     }
