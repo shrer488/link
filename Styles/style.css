@@ -178,6 +178,8 @@
                             .text{ 
                                 /* making the text content come in the middle */
                                 grid-column: 2;
+                                /* max-width: 20rem; */
+                                
 
                                 p{
                                     background: rgba(255, 255, 255, 0.636);
@@ -187,28 +189,22 @@
                                     line-height: 1.6rem;
                                     padding: 1rem;
                                     border-radius: 8rem;
-                                    max-width: 20rem;
 
                                 }
                             }
 
                             .content-size{
                                 max-height: 12rem;
+                                
                             } 
 
                             .content-size:hover{
-                                filter: blur(1rem);
+                                /* filter: blur(1rem); */
                             }
 
 
                         }
                         
-                        
-                        
-
-
-                    
-
                     
                     }
                     
@@ -244,7 +240,7 @@ footer{
 body{
     main{
         .hero{
-            background-image: url("Images/hero-butterfly.png");
+            background-image: url("/Images/hero-butterfly.png");
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
@@ -287,26 +283,33 @@ body{
 
                     ul{
                     display: grid;
-                    grid-template-columns: repeat(5, 1fr);
+                    /* grid-template-columns: repeat(5, 1fr); */
                     grid-template-rows: auto;
-                    gap: calc(var(--spacing)*9);
+                    /* gap: calc(var(--spacing)*9); */
                     
 
                     li{
-                        img{
-                            /* height: 16rem; */
-                            /* width: 16rem; */
-                            border: var(--border-width) solid var(--text-color);
-                            border-radius: 2rem;
-                            object-fit: cover;
-                            overflow: hidden;
-                            mask-image: radial-gradient(black 50%, transparent 60%);
-                        }
+                        
+                    }
+                    
+                    img{
+                        /* height: 16rem; */
+                        /* width: 16rem; */
+                        /* border: var(--border-width) solid var(--text-color); */
+                        border-radius: 2rem;
+                        /* object-fit: cover; */
+                        /* overflow: hidden; */
+                        /* mask-image: radial-gradient(black 50%, transparent 60%); */
+                    }
 
+                    text{
+                        /* making the text content come in the middle */
+                        grid-column: 4;
+                        /* max-width: 30rem; */
                     }
 
                     .content-size{
-                        max-height: 30rem;
+                        max-height: 80rem;
                         /* aspect-ratio: 16/9; */
                     }
                 }
