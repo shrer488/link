@@ -106,15 +106,16 @@
 
 
                 .content{
-                            .collection-modal, a, #controls{
-                                border-radius: 2rem;
-                                padding-block: 0.3rem;
-                                padding-inline: 0.8rem;
-                                display: flex;
-                                align-items: center;
-                                gap: 0.5rem;
-                                width: fit-content;
-                            }
+                    
+                    .collection-modal, a, .controls{
+                        border-radius: 2rem;
+                        padding-block: 0.3rem;
+                        padding-inline: 0.8rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        width: fit-content;
+                    }
                             
                             button:hover, a:hover{
                                     background: rgba(47, 62, 94, 0.26);
@@ -126,6 +127,7 @@
                                 border: var(--border-width) solid var(--text-color);
                             }
             
+                            
 
                     
                     
@@ -148,19 +150,28 @@
                         z-index: 1000;
                         overflow-y: auto;
                         padding: var(--spacing);
+                        width: 100vw;
         
 
                        
-                            .close-button{
+                            .close-button, .controls{
                                 position: sticky;
                                 top: 0;
                                 z-index: 1;
+                                border-radius: 2rem;
+                                padding-block: 0.3rem;
+                                padding-inline: 0.8rem;
+                                display: flex;
+                                align-items: center;
+                                gap: 0.5rem;
+                                width: fit-content;
+                                border: var(--border-width) solid var(--text-color);
                             }
                             
                             .controls{
-                                position: fixed;
-                                display: flex;
-                                bottom: 0rem;
+                                bottom: 0;
+                                top:94%;
+                                left: 50vw;
                                 
                                 button{
                                     border: none;
@@ -173,6 +184,8 @@
                         ul{
                             display: grid;
                             grid-template-columns: repeat(5,1fr);
+                            gap: calc(var(--spacing)*9);
+                            align-items: center;
                             /* flex-direction: column; */
                             /* flex-wrap: nowrap; Default. */
 	                        /* min-block-size: 9rem; */
@@ -195,6 +208,7 @@
                                 saturate(3)
                                 contrast(1.4)
                                 brightness(1.1);
+
                                 
                             }
                             
@@ -227,6 +241,11 @@
 
                                 }
                             }
+
+                            .text:hover p{
+                                scale: 150%;
+                                /* filter: blur(0.5rem); */
+                            }   
 
                             .content-size{
                                 max-height: 12rem;
@@ -280,7 +299,7 @@ footer{
 body{
     main{
         .hero{
-            background-image: url("/Images/hero-butterfly.png");
+            background-image: url("Images/hero-butterfly.png");
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
