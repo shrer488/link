@@ -10,3 +10,5 @@ collectionModalButton.addEventListener('click',()=>{
 collectionClose.addEventListener('click', ()=>{
     collectionDialog.close()
 })
+
+
