@@ -95,7 +95,6 @@ let renderBlock = (blockData) => {
 			let videoItem =
 				`
 				<li>
-					<p><em>Video</em></p>
 					<video class="content-size" class="video" controls src="${ blockData.attachment.url }"></video>
 				</li>
 				`
@@ -166,7 +165,7 @@ let renderUser = (userData) => {
 	let channelUser = document.querySelector('#channel-user') // Container.
 
 	if (userData.slug == myUsername) {
-		
+
 		let userAddress =
 		`
 		<address>
