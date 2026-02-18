@@ -5,6 +5,7 @@
       font-size: 0.9rem;
       
       --text-color: #08183A;
+      --secondary-text-color: #08183aa9;
       
       --spacing: 1.5rem;
       --border-width: 0.05rem;
@@ -23,7 +24,6 @@
     body{
         main{
             .hero{
-                
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -31,30 +31,41 @@
                 height: 100vh;
                 padding: var(--spacing);
                 
-                .mobile-external-links{
+                .external-links{
                     display: flex;
-                    gap: var(--spacing);
                     width: 100%;
                     justify-content: space-between;
-                    /* margin-bottom: var(--spacing); */
 
-                    #channel-user{
-                        text-align: right;
+                    h2{
+                        color: var(--secondary-text-color);
+                            font-size: 0.9rem;
+
                     }
 
-
                     .designer{
-                        h2{
+
+                        *{
                             text-align: right;
                         }
+                    }
+
+                    #channel-link{
+                        border-radius: 2rem;
+                        padding: 0.8rem;
+                    }
+
+                    #channel-link:hover{
+                         background: var(--blur-background-color);
+                        box-shadow: var(--blur-background-box-shadow);
+                        backdrop-filter: var(--blur-background-backdrop-filter);
                     }
                 }
 
                 .hero-text{
                     display: flex;
+                    flex-direction: column;
                     text-align: center;
                     align-items: center;
-                    flex-direction: column;
                     gap: calc(var(--spacing)/2);
 
                     .butterfly-image{
@@ -65,28 +76,25 @@
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        /* justify-content: space-between; */
+                        text-align: center;
                         gap: 0.5rem;
-                        width: 100%;
+
+                        h1,p{
+                            background: rgba(255, 255, 255, 0.636);
+                            box-shadow: 0px 0px 20px 12px rgba(255, 255, 255, 0.636);
+                        }
 
                         h1{
-                            font-size: var(--h1-size) ;
+                            font-size: var(--h1-size);
                             font-weight: 700;
                             display: inline;
                             width: fit-content;
                         }
                         
                         p{
-                            text-align: center;
-                            margin: 0 auto;
-                            color: #08183aa9;
+                            color: var(--secondary-text-color);
                         }
                         
-                        h1,p{
-                            background: rgba(255, 255, 255, 0.636);
-                            box-shadow: 0px 0px 20px 12px rgba(255, 255, 255, 0.636);
-                        }
-    
                         .updated-date{
                             display: flex;
                             width: fit-content;
@@ -107,98 +115,81 @@
 
                 .content{
                     
-                    .collection-modal, a, .controls{
-                        border-radius: 2rem;
-                        padding-block: 0.3rem;
-                        padding-inline: 0.8rem;
-                        display: flex;
-                        align-items: center;
-                        gap: 0.5rem;
-                        width: fit-content;
-                    }
-                            
-                            button:hover, a:hover{
-                                    background: rgba(47, 62, 94, 0.26);
-                                    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-                                    backdrop-filter: blur(9.4px);
-                                }
-                            
-                            button, #controls{
-                                border: var(--border-width) solid var(--text-color);
-                            }
-            
-                            
+                        button{
+                            padding-block: 0.3rem;
+                            padding-inline: 0.8rem;
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            width: fit-content;
+                        }
 
-                    
-                    
-                }
+                        button:hover{
+                            background: var(--blur-background-color);
+                            box-shadow: var(--blur-background-box-shadow);
+                            backdrop-filter: var(--blur-background-backdrop-filter);
+                        }
 
+                        button, .controls{
+                            border: var(--border-width) solid var(--text-color);
+                            border-radius: 2rem;
+                        }
+
+                
+                    /* Actual pop up body of the modal. This is where the content list is displayed. */
                     
                     dialog{
                         /* Added a frosty blurred background for modal */
                         /* From https://css.glass */
                         /* Here we are adding a tinted background with low opacity then adding backdrop filter that blurs the stuffs behind the modal */
-                        background: rgba(47, 62, 94, 0.26);
-                        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-                        backdrop-filter: blur(9.4px);
+                        background:var(--blur-background-color);
+                        box-shadow:var(--blur-background-box-shadow);
+                        backdrop-filter: var(--blur-background-backdrop-filter);
                         
         
                         /* Was having trouble with the modal not taking full height so asked chatgpt.  */
                         /* Apparently the dialog is inside a container with limited height and it was inheriting that height so I think this code makes it cover the entire viewport by defining its position and moving it to the top of the screen.  */
                         position: fixed;
                         inset: 0; 
-                        z-index: 1000;
-                        overflow-y: auto;
+                        z-index: 2;
+                        overflow-y: auto; /* to enable scrolling when the content exceeds the viewport height. */
                         padding: var(--spacing);
                         width: 100vw;
         
 
                        
-                            .close-button, .controls{
-                                position: sticky;
-                                top: 0;
-                                z-index: 1;
-                                border-radius: 2rem;
-                                padding-block: 0.3rem;
-                                padding-inline: 0.8rem;
-                                display: flex;
-                                align-items: center;
-                                gap: 0.5rem;
-                                width: fit-content;
-                                border: var(--border-width) solid var(--text-color);
-                            }
+                        .close-button, .controls{
+                            position: sticky;
+                            z-index: 1;
+                            top: 0;
+                            left: 0;
+                        }
+                        
+                        .controls{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            gap: 0.5rem;
+                            width: fit-content;
+                            top:70%;
                             
-                            .controls{
-                                bottom: 0;
-                                top:94%;
-                                left: 50vw;
-                                
-                                button{
-                                    border: none;
-                                }
+                            button{
+                                border: none;
                             }
+                        }
                         
                         
 
                         /* Content list pulled from the channel blocks is displayed in a grid layout. 3 columns are defined and the content is spaced out evenly.  */
                         ul{
                             display: grid;
-                            grid-template-columns: repeat(5,1fr);
-                            gap: calc(var(--spacing)*9);
-                            align-items: center;
-                            /* flex-direction: column; */
-                            /* flex-wrap: nowrap; Default. */
-	                        /* min-block-size: 9rem; */
-                            /* width: 200rem; */
-                            /* flex-grow: 3; */
-                            /* gap: var(--spacing); */
-                            /* align-items: baseline; */
-                            /* justify-content: space-evenly; */
-                            /* margin: 0 auto; */
+                            grid-template-columns: repeat(3,1fr);
+                            gap: calc(var(--spacing)*6);
+                            place-items: center;
 
                             li{
                                 filter: none;
-                              
+                                max-height: 30rem;
                             }
 
                             li:hover{
@@ -208,14 +199,13 @@
                                 saturate(3)
                                 contrast(1.4)
                                 brightness(1.1);
-
-                                
                             }
                             
                             /* based on object style  */
                             .images{
-                                /* grid-column: 1 3; */
-                            align-self: flex-start;
+                                height: 100%;
+                                /* grid-column: 1; */
+                                /* align-self: flex-start; */
                               
                             /* mask-image: url("/Images/Vector\ 1.svg");
                             mask-size: 100% 100%;
@@ -227,6 +217,9 @@
                             .text{ 
                                 /* making the text content come in the middle */
                                 grid-column: 2;
+                                /* height: fit-content; */
+                                /* min-width: 0; */
+                                 /* overflow: hidden; */
                                 /* max-width: 20rem; */
                                 
 
@@ -248,7 +241,7 @@
                             }   
 
                             .content-size{
-                                max-height: 12rem;
+                                /* max-height: 12rem; */
                                 /* mask-image: url(/Images/Vector\ 1.svg); */
                                 /* mask-size: 100% 100%; */
                                 /* mask-repeat: no-repeat; */
@@ -266,6 +259,7 @@
                         
                     
                     }
+                }
                     
         }
 
@@ -299,14 +293,31 @@ footer{
 body{
     main{
         .hero{
-            background-image: url("Images/hero-butterfly.png");
+            background-image: url("/Images/hero-butterfly.png");
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
                    
             .butterfly-image{
                     display: none;
+            }
+
+            .content{
+                dialog{
+                    
+                    .controls{
+                        flex-direction: row;
+                        top: 94%;
+                        left: 50%;
+                    }
+
+                    ul{
+                        grid-template-columns: repeat(5,1fr);
+                            gap: calc(var(--spacing)*9);
+                            align-items: center;
+                    }
                 }
+            }
         }
     }
 }

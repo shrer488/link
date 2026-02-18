@@ -9,7 +9,7 @@
     <body>
         <main>
             <section class="hero">
-                <section class="mobile-external-links">
+                <section class="external-links">
                     <section class="curator">
                             <h2>Curated</h2> 
                         <div id="channel-owner">
@@ -28,9 +28,7 @@
                         </defs>
                         </svg>
                         </a>
-
                         <section class="designer">
-                            
                             <h2>Designed</h2> 
                         <div id="channel-user">
                         </div>
@@ -38,9 +36,12 @@
                 </section>
 
                 <section class="hero-text">
+
+                    <!-- This is the butterfly image that is shown only in mobile and is hidden in desktop. The image is added in the HTML instead of CSS because when added in CSS, it shows up as a background image and the content of the hero section is not visible. By adding it in the HTML, we can control its position and size more easily and ensure that it does not interfere with the content of the hero section. -->
                     <div class="butterfly-image">
-                        <img src="Images/hero-butterfly.png" alt="">
+                        <img src="Images/hero-butterfly.png" alt="butterfly image">
                     </div>
+
                     <section class="hero-content">
                         <h1 id="channel-title"></h1>
                         <div id="channel-description"></div>
@@ -51,8 +52,8 @@
                     </section>
                 </section>
                 
-            <section class="content" id="start" id="channel-blocks" >
-                <button class="collection-modal">
+             <section class="content">
+                    <button class="collection-modal">
                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                         width="24px" height="24px" viewBox="0 0 1280.000000 805.000000"
                         preserveAspectRatio="xMidYMid meet">
@@ -157,21 +158,39 @@
                         </g>
                         </svg>
                     </button>
-                <dialog class="collection-dialog" closedby="any">
+                    <dialog class="collection-dialog" closedby="any">
                             <button class="close-button">Close</button>
-                            
-                            </div>
+                            <ul class="controls">
+                                        <li>
+                                            <button class="show-all">
+                                                Everything
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="show-images">
+                                                Images
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="show-texts">
+                                                Texts
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="show-links">
+                                                Links
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="show-others">
+                                                Others
+                                            </button>
+                                        </li>
+                            </ul>
                     <ul id="channel-blocks"
                     </ul>
-                    <ul class="controls">
-                                <li><button class="show-all">Everything</button></li>
-                                <li><button class="show-images">Images</button></li>
-                                <li><button class="show-texts">Texts</button></li>
-                                <li><button class="show-links">Links</button></li>
-                                <li><button class="show-others">Others</button></li>
-                            </ul>
-                </dialog>
-                </section>
+                    </dialog>
+             </section>
         </main>
     </body>
     <footer>
