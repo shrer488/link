@@ -203,23 +203,39 @@
                                     box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
                             }
 
+                           
+
                             li:hover{
                                 mix-blend-mode: normal;
                                 filter: blur(0) brightness(1) saturate(1);
-                                 background: white;
                                 box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
                                 mask-image: none;
                                 border-radius: none;
                             }
 
-                            img{
+                            .images{
+                                .metadata{
+                                    display: block;
+                                    transform: translateX(-30%) translateY(50%);
+                                    background: rgba(255, 255, 255, 0.636);
+                                    box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
+
+                                    p{
+                                        max-width: 18rem;
+                                        margin: 0;
+                                    }
+                                }
+
+                                .metadata:nth-child(5n + 1){
+                                    transform: translateX(50%);
+                                }
                             }
 
                             .img:hover{
                                 .metadata{
                                     display: block;
                             }
-                        }
+                            }
 
                             .text{ 
                                 
@@ -240,7 +256,7 @@
                             }
                         }
                         
-                    
+                        
                     }
                 }
                     
@@ -301,11 +317,21 @@ body{
                             li:nth-child(5n){
                                 padding-inline-end: var(--spacing);
                             }
-                        }
+
+                            li:nth-child(3n+1){
+                                justify-self: end;
+	                            align-self: end;
+                            }
+
+                            li:nth-child(2n+1){
+                                justify-self: start;
+	                            align-self: start;
+                            }
                 }
             }
         }
     }
+}
 }
 }
 

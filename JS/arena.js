@@ -66,7 +66,7 @@ let renderBlock = (blockData) => {
 		<li class="content-size images">
 		<img  alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
 		<section class="metadata"> 
-		<p>${blockData.image.caption}</p>
+		<p>${blockData.title}</p>
 		</section>
 		</li>
 		`
@@ -98,7 +98,7 @@ let renderBlock = (blockData) => {
 			let videoItem =
 				`
 				<li>
-					<video class="content-size" class="video" controls src="${ blockData.attachment.url }"></video>
+					<video class="videos" class="video" controls src="${ blockData.attachment.url }"></video>
 				</li>
 				`
 
@@ -188,6 +188,8 @@ let renderUser = (userData) => {
 
 	channelOwner.insertAdjacentHTML('beforeend', userAddress)
 }
+
+
 
 
 
