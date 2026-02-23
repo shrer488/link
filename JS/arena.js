@@ -63,7 +63,7 @@ let renderBlock = (blockData) => {
 
 		let imageItem =
 		`
-		<li class="content-size images">
+		<li class="image-block">
 		<img  alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
 		<section class="metadata"> 
 		<p>${blockData.title}</p>
@@ -81,7 +81,7 @@ let renderBlock = (blockData) => {
 	else if (blockData.type == 'Text') {
 		let textItem =
 		`
-		<li class="text">
+		<li class="text-block">
 		 <p>${blockData.content.plain}</p>
 		</li>		`
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)
@@ -97,7 +97,7 @@ let renderBlock = (blockData) => {
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
-				<li>
+				<li class="other-block">
 					<video class="videos" class="video" controls src="${ blockData.attachment.url }"></video>
 				</li>
 				`
@@ -118,9 +118,9 @@ let renderBlock = (blockData) => {
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
 				`
-				<li>
+				<li class="other-block">
 					<p><em>Audio</em></p>
-					<audio controls src="${ blockData.attachment.url }"></video>
+					<audio controls src="${ blockData.attachment.url }"></audio>
 				</li>
 				`
 
@@ -140,7 +140,7 @@ let renderBlock = (blockData) => {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li>
+				<li class="other-block">
 					<p><em>Linked Video</em></p>
 					${ blockData.embed.html }
 				</li>

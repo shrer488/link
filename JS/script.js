@@ -22,3 +22,38 @@ butterflyImage.addEventListener('click', ()=>{
     collectionDialog.showModal()
     heroContent.style.display = 'none' // Hides the hero content when the butterfly image is clicked
 })
+
+// -----------------------------------------------------------------------
+// ADDING FILTER FUNCTIONALITY TO THE CONTENT
+
+// Used copilot (GPT-05mini) here to add the filter functionality to the content.
+// every time user clicks on the filter option button the filterBlockByClass function is called and the blockClass is passed to it as an argument. eg: images is clicked 'image-block' is passed. 
+// Now the allItems const selects all the list items in the channel-blocks list and checks each one by one. if the argument is all (showAll button is clicked) then the function removes 'filter' class from all the list items. but if the argument is any other block type (image, links ...) then the function adds 'filter' class to all list items except the ones with the sent block type.
+
+// what is 'filter' class? it is the class with display:none in the css.
+
+let showAllButton = document.querySelector('.show-all')
+let showImagesButton = document.querySelector('.show-images')
+let showTextButton = document.querySelector('.show-texts')
+let showLinksButton = document.querySelector('.show-links')
+let showOtherButton = document.querySelector('.show-others')
+
+
+
+function filterBlocksByClass(blockClass) {
+    // select all items inside channel-blocks 
+    const allItems = document.querySelectorAll('#channel-blocks li')
+    allItems.forEach(item => {
+        if (blockClass === 'all') {
+            item.classList.remove('filter')
+        } else {
+            item.classList.toggle('filter', !item.classList.contains(blockClass))
+        }
+    })
+}
+
+showAllButton?.addEventListener('click', () => filterBlocksByClass('all'))
+showImagesButton?.addEventListener('click', () => filterBlocksByClass('image-block'))
+showTextButton?.addEventListener('click', () => filterBlocksByClass('text-block'))
+showLinksButton?.addEventListener('click', () => filterBlocksByClass('link-block'))
+showOtherButton?.addEventListener('click', () => filterBlocksByClass('other-block'))

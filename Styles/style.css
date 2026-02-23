@@ -177,6 +177,8 @@
                             button{
                                 border: none;
                             }
+
+                            
                         }
                         
                         
@@ -190,6 +192,8 @@
                             align-items: center;
                             padding: var(--spacing);
 
+
+                            /* giving style to the content */
                             li{
                                     border-radius: 8rem;
                                     filter: brightness(1.2) saturate(0.7);
@@ -213,7 +217,10 @@
                                 border-radius: none;
                             }
 
-                            .images{
+                           
+
+                            /* separating the style for different content types */
+                            .image-block{
                                 .metadata{
                                     display: block;
                                     transform: translateX(-30%) translateY(50%);
@@ -253,6 +260,11 @@
                                     box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
                                     color: var(--text-color);
                                     font-weight: 500;
+                            }
+
+                             /* adding filter to the content */
+                            .filter{
+                                display: none;
                             }
                         }
                         
