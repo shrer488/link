@@ -84,3 +84,25 @@ let controlsContent = document.querySelector('.controls-content')
 mobileControls.addEventListener('click', ()=>{
     controlsContent.classList.toggle('display')
 })
+
+// IntersectionObserver
+let highlightClass = 'highlight';
+
+function initObserver() {
+    const highlightBlocks = document.querySelectorAll('#channel-blocks li');
+    
+    highlightBlocks.forEach((block) => {
+        let sectionObserver = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                block.classList.add(highlightClass);
+            } else {
+                block.classList.remove(highlightClass);
+            }
+        }, {
+            root: null, // 'null' defaults to the viewport
+            rootMargin: '-25% 0% -25% 0%',
+        });
+
+        sectionObserver.observe(block);
+    });
+}
