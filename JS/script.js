@@ -75,7 +75,9 @@ showOtherButton?.addEventListener('click', () => filterBlocksByClass('other-bloc
 //     })
 // }
 
-// menu bar
+// responsive menu bar
+// in mobile menu bar is hidden in the filter icon
+// added a class called display in css with visibility hidden. and toggled the visibility of the menu in the control-content.
 let mobileControls= document.querySelector('.mobile-controls')
 let controlsContent = document.querySelector('.controls-content')
 
