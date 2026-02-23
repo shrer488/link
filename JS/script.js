@@ -57,3 +57,28 @@ showImagesButton?.addEventListener('click', () => filterBlocksByClass('image-blo
 showTextButton?.addEventListener('click', () => filterBlocksByClass('text-block'))
 showLinksButton?.addEventListener('click', () => filterBlocksByClass('link-block'))
 showOtherButton?.addEventListener('click', () => filterBlocksByClass('other-block'))
+
+
+// adding butterflyVision
+// let butterflyVisionButton = document.querySelector('.butterfly-vision-button')
+
+// butterflyVisionButton.addEventListener('click', () => {
+//     collectionDialog.butterflyVision()
+// })
+
+// function butterflyVision() {
+//     // select all items inside channel-blocks 
+//     const allItems = document.querySelectorAll('#channel-blocks li')
+//     allItems.forEach(item => {
+//          item.classList.add('butterfly-vision')
+
+//     })
+// }
+
+// menu bar
+let mobileControls= document.querySelector('.mobile-controls')
+let controlsContent = document.querySelector('.controls-content')
+
+mobileControls.addEventListener('click', ()=>{
+    controlsContent.classList.toggle('display')
+})

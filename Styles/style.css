@@ -23,6 +23,8 @@
     
     body{
         main{
+             
+
             .hero{
                 display: flex;
                 flex-direction: column;
@@ -130,7 +132,7 @@
                             backdrop-filter: var(--blur-background-backdrop-filter);
                         }
 
-                        button, .controls{
+                        button, .controls-content{
                             border: var(--border-width) solid var(--text-color);
                             border-radius: 2rem;
                         }
@@ -158,27 +160,42 @@
         
 
                        
-                        .close-button, .controls{
+                        .top-bar, .controls{
                             position: sticky;
                             z-index: 1;
                             top: 0;
                             left: 50%;
                             transform: translateX(-50%);
                         }
+
+                        .top-bar{
+                            display: flex;
+                            justify-content: space-between;
+                            right: 0;
+                            /* align-items: center; */
+                            width: 100%;
+                            /* max-width: 40rem; */
+                            /* padding: var(--spacing); */
+                        }
                         
                         .controls{
-                            display: flex;
+                            top:70%;
+                        }
+
+                           
+                        .display{
+                            visibility: hidden;
+                        }
+
+                        .controls-content{
                             flex-direction: column;
                             align-items: center;
                             gap: 0.5rem;
                             width: fit-content;
-                            top:70%;
                             
                             button{
                                 border: none;
                             }
-
-                            
                         }
                         
                         
@@ -191,6 +208,7 @@
                             gap: calc(var(--spacing)*8);
                             align-items: center;
                             padding: var(--spacing);
+                            padding-block-end: calc(var(--spacing)*4);
 
 
                             /* giving style to the content */
@@ -244,18 +262,17 @@
                             }
                             }
 
-                            .text{ 
+                            .text-block{ 
                                 
                                 p{
                                     text-align: center;
                                     color: var(--secondary-text-color);
                                     line-height: 1.6rem;
                                     padding: var(--spacing);
-
                                 }
                             }
 
-                            .text:hover{
+                            .text-block:hover{
                                  background: rgba(255, 255, 255, 0.636);
                                     box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
                                     color: var(--text-color);
@@ -266,6 +283,9 @@
                             .filter{
                                 display: none;
                             }
+
+                            
+                            
                         }
                         
                         
@@ -275,8 +295,11 @@
         }
 
     }
+    
 }
 body:has(dialog[open]) { overflow: hidden; }
+
+
 
 footer{
     
@@ -316,7 +339,12 @@ body{
             .content{
                 dialog{
                     
+                    .mobile-controls{
+                        display: none;
+                    }
+                    
                     .controls{
+                        display: flex;
                         flex-direction: row;
                         top: 94%;
                         left: 50%;
