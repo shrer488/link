@@ -37,7 +37,7 @@ let renderBlock = (blockData) => {
 		// Declares a “template literal” of the dynamic HTML we want.
 		let linkItem =
 			`
-			<li>
+			<li class="link-block">
 				<figure>
 					<picture>
 						<source media="(width < 500px)" srcset="${ blockData.image.small.src_2x }">
@@ -46,7 +46,7 @@ let renderBlock = (blockData) => {
 					</picture>
 					
 				</figure>
-				<p><a href="${ blockData.source.url }">See the original ↗</a></p>
+				<p><a class="metadata" href="${ blockData.source.url }">See the original ↗</a></p>
 			</li>
 			`
 
@@ -98,7 +98,7 @@ let renderBlock = (blockData) => {
 			let videoItem =
 				`
 				<li class="other-block">
-					<video class="videos" class="video" controls src="${ blockData.attachment.url }"></video>
+					<video class="videos" controls src="${ blockData.attachment.url }"></video>
 				</li>
 				`
 
@@ -110,7 +110,18 @@ let renderBlock = (blockData) => {
 
 		// Uploaded PDFs!
 		else if (contentType.includes('pdf')) {
-			// …up to you!
+			console.log(contentType)
+			let pdfItem =
+				`
+				<li class="other-block">
+					<a href=" ${blockData.attachment.url} ">
+ 					${blockData.title}
+					</a>
+				</li>
+				`
+
+			channelBlocks.insertAdjacentHTML('beforeend', pdfItem )
+
 		}
 
 		// Uploaded audio!
@@ -140,8 +151,7 @@ let renderBlock = (blockData) => {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li class="other-block">
-					<p><em>Linked Video</em></p>
+				<li class="other-block video">
 					${ blockData.embed.html }
 				</li>
 				`
@@ -164,7 +174,6 @@ let renderBlock = (blockData) => {
 // A function to display the owner/collaborator info:
 let renderUser = (userData) => {  
 	let channelOwner = document.querySelector('#channel-owner') // Container.
-	console.log(userData) // See what we get back!
 	let channelUser = document.querySelector('#channel-user') // Container.
 
 	if (userData.slug == myUsername) {
@@ -222,7 +231,6 @@ let fetchJson = (url, callback, pageResponses = []) => {
 
 // Now that we have said all the things we *can* do, go get the channel data:
 fetchJson(`https://api.are.na/v3/channels/${channelSlug}`, (json) => {
-	console.log(json) // Always good to check your response!
 
 	placeChannelInfo(json) // Pass all the data to the first function, above.
 	renderUser(json.owner) // Pass just the nested object `.owner`.
@@ -230,14 +238,12 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}`, (json) => {
 
 // Get your info to put with the owner's:
 fetchJson(`https://api.are.na/v3/users/${myUsername}/`, (json) => {
-	console.log(json) // See what we get back.
 
 	renderUser(json) // Pass this to the same function, no nesting.
 })
 
 // And the data for the blocks:
 fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=position_desc`, (json) => {
-	console.log(json) // See what we get back.
 
 	// Loop through the nested `.data` array (list).
 	json.data.forEach((blockData) => {

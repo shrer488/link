@@ -30,7 +30,7 @@
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
-                height: 100vh;
+                height: 100svh;
                 padding: var(--spacing);
                 
                 .external-links{
@@ -192,6 +192,7 @@
                             align-items: center;
                             gap: 0.5rem;
                             width: fit-content;
+                            /* padding: 0.2rem; */
                             
                             button{
                                 border: none;
@@ -272,12 +273,24 @@
                                 }
                             }
 
-                            .text-block:hover{
+                            .other-block{
+                                max-height: 18rem;
+                            }
+
+                            .text-block:hover, .other-block:hover{
                                  background: rgba(255, 255, 255, 0.636);
                                     box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
                                     color: var(--text-color);
                                     font-weight: 500;
                             }
+
+                            .other-block:hover{
+
+                                &.video{
+                                    height: 18rem;
+                                }
+                            }
+                            
 
                              /* adding filter to the content */
                             .filter{
@@ -339,11 +352,15 @@ body{
             .content{
                 dialog{
                     
+                    .controls{
+                            top:90%;
+                        }
+
                     .mobile-controls{
                         display: none;
                     }
                     
-                    .controls{
+                    .controls-content{
                         display: flex;
                         flex-direction: row;
                         top: 94%;
