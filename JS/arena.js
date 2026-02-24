@@ -29,7 +29,7 @@ let placeChannelInfo = (channelData) => {
 // Then our big function for specific-block-type rendering:
 let renderBlock = (blockData) => {
 	
-	console.log(blockData.type)
+	console.log(blockData)
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.querySelector('#channel-blocks')
 
@@ -66,8 +66,9 @@ let renderBlock = (blockData) => {
 		`
 		<li class="image-block">
 		<img  alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
-		<section class="metadata"> 
-		<p>${blockData.title}</p>
+		<section class="metadata">
+		<h2>Created at</h2>
+		<p>${new Date(blockData.created_at).toLocaleDateString()}</p>
 		</section>
 		</li>
 		`

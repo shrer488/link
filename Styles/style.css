@@ -20,9 +20,15 @@
       --blur-background-backdrop-filter: blur(9.4px);
                             
     }
+
+    h2{
+        color: var(--secondary-text-color);
+        font-size: 0.9rem;
+    }
     
     body{
         main{
+            
              
 
             .hero{
@@ -38,11 +44,7 @@
                     width: 100%;
                     justify-content: space-between;
 
-                    h2{
-                        color: var(--secondary-text-color);
-                            font-size: 0.9rem;
-
-                    }
+                    
 
                     .designer{
 
@@ -234,24 +236,25 @@
                             /* giving style to the content */
                             li{
                                     border-radius: 8rem;
-
+                                    
                                     /* Used Gemini to get a blurred object so it looks a bit nostalgic and dreamy. The blur is done in a way that the center of the image is more visible and the edges are more blurred so it gives a nice glowing effect to the image. */
                                     mix-blend-mode:color-burn;
                                     mask-image: radial-gradient(circle, black 20%, rgba(0, 0, 0, 0) 80%);
+                                    
                                     /* You can also use a filter to blur the whole thing slightly first */
                                     filter: blur(0.1rem) brightness(1) saturate(1.2);
                                     background: rgba(255, 255, 255, 0.636);
                                     box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
-                                    transition: filter 1s ease, 
-                                                box-shadow 0.8s ease, 
-                                                border-radius 0.8s ease, 
-                                                mix-blend-mode 0.8s ease;
+                                    
+                                    /* added transition so when the user hovers on the object it is not abrupt */
+                                    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+
 
                                 }
 
                            
 
-                            li:hover{
+                            li:hover, &.highlight {
                                 mix-blend-mode: normal;
                                 filter: blur(0) brightness(1) saturate(1);
                                 box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
@@ -259,21 +262,14 @@
                                 border-radius: 0;
                                 
                             }
-
-                            &.highlight { /* When the class is applied with JS! */
-                                 mix-blend-mode: normal;
-                                filter: blur(0) brightness(1) saturate(1);
-                                box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
-                                mask-image: none;
-                                border-radius: none;
-                            }
                            
 
                             /* separating the style for different content types */
                             .image-block{
+                                text-align: center;
                                 .metadata{
                                     display: inline-block;
-                                    transform: translateX(-30%) translateY(50%);
+                                    margin-block-start: var(--spacing);
                                     background: rgba(255, 255, 255, 0.636);
                                     box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
 
@@ -281,20 +277,15 @@
                                         max-width: 18rem;
                                         margin: 0;
                                         font-weight: 500;
+                                        color: var(--secondary-text-color);
 
-                                    }
-                                }
-
-                               /* moving all the meta data on the first column of the grid to the right so they are always in frame  */
-                                &:nth-child(5n + 1) {
-                                    .metadata {
-                                        transform: translateX(50%) translateY(50%); 
                                     }
                                 }
                             }
                             
 
                             .img:hover{
+                                
                                 .metadata{
                                     display: block;
                             }
