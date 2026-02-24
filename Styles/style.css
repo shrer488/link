@@ -445,7 +445,13 @@
                        }
 
                         .controls-content{
-                            
+                            li:hover{
+                                filter: invert(100%) brightness(200%);
+                                    background: none;
+                                    box-shadow: none;
+                                   
+
+                            }
                         }
 
                         #channel-blocks{
