@@ -576,13 +576,14 @@ body{
                     .mobile-controls{
                         display: none;
                     }
+
+                    .display{
+                            visibility: visible;
+                        }
                     
                     .controls-content{
                         display: flex;
                         flex-direction: row;
-                        /* top: 94%; */
-                        /* left: 50%; */
-                            /* transform: translateX(50%); */
                     }
 
                     #channel-blocks{
