@@ -569,6 +569,8 @@ body{
                     .controls{
                             top:94%;
                             bottom: var(--spacing);
+                            display: grid;
+                            justify-content: center;
                         }
 
                     .mobile-controls{
