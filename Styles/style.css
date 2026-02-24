@@ -449,12 +449,7 @@
                                     mix-blend-mode:normal;
                                     mask-image: none;
                                     /* You can also use a filter to blur the whole thing slightly first */
-                                    filter:
-                                saturate(350%)
-                                contrast(160%)
-                                brightness(120%)
-                                hue-rotate(210deg)
-                                invert(5%);
+                                    filter: saturate(250%) hue-rotate(30deg) brightness(1.1) contrast(120%);
                                     background: none;
                                     box-shadow: none;
                                     
@@ -464,12 +459,7 @@
 
                             li:hover{
                                 mix-blend-mode: normal;
-                                filter: 
-                                saturate(350%)
-                                contrast(160%)
-                                brightness(120%)
-                                hue-rotate(210deg)
-                                invert(5%);;
+                                filter: saturate(250%) hue-rotate(30deg) brightness(1.1) contrast(120%);
                                 box-shadow: none;
                                 mask-image: none;
                                 border-radius: 0;
@@ -499,7 +489,7 @@
                             }
 
                             .pdf-block:hover{
-                                
+
                                         h2{
                                         color: white;
                                         }
@@ -551,7 +541,7 @@
 
     }
     
-}
+
 body:has(dialog[open]) { overflow: hidden; }
 
 
