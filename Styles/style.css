@@ -231,7 +231,7 @@
                         
                         #channel-blocks{
                             display: grid;
-                            grid-template-columns: repeat(3, 16rem);
+                            grid-template-columns: repeat(4, 16rem);
                             gap: calc(var(--spacing)*16);
                             align-items: center;
                             padding: var(--spacing);
