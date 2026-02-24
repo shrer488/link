@@ -142,6 +142,14 @@ mobileControls.addEventListener('click', ()=>{
     controlsContent.classList.toggle('display')
 })
 
+
+
+
+
+
+
+
+
 // IntersectionObserver
 let highlightClass = 'highlight';
 

@@ -154,7 +154,7 @@
         
                         /* Was having trouble with the modal not taking full height so asked chatgpt.  */
                         /* Apparently the dialog is inside a container with limited height and it was inheriting that height so I think this code makes it cover the entire viewport by defining its position and moving it to the top of the screen.  */
-                        position: fixed;
+                        /* position: fixed; */
                         inset: 0; 
                         z-index: 2;
                         overflow-y: auto; /* to enable scrolling when the content exceeds the viewport height. */
@@ -166,8 +166,8 @@
                             position: sticky; /* went for position sticy instead of fixed because the dialog is already porition fixed, which causes stacking and makes it impossible for the items to be fixed in one position. */
                             z-index: 3;
                             top: 0;
-                            left: 50%;
-                            transform: translateX(-50%);
+                            left: 0;
+                            
                         }
 
                         .top-bar{
@@ -181,7 +181,11 @@
                         }
                         
                         .controls{
-                            top:80%;
+                            top: 66%;
+                            
+                            .mobile-controls{
+                                margin-block-start: var(--spacing);
+                            }
                         }
 
                            
@@ -227,8 +231,8 @@
                         
                         #channel-blocks{
                             display: grid;
-                            grid-template-columns: repeat(3, 18rem);
-                            gap: calc(var(--spacing)*8);
+                            grid-template-columns: repeat(3, 16rem);
+                            gap: calc(var(--spacing)*4);
                             align-items: center;
                             padding: var(--spacing);
                             padding-block-end: calc(var(--spacing)*4);
@@ -464,6 +468,7 @@ body{
                     
                     .controls{
                             top:94%;
+                            bottom: var(--spacing);
                         }
 
                     .mobile-controls{
