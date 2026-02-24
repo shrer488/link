@@ -178,30 +178,6 @@ let renderBlock = (blockData) => {
 	
 }
 
-// IntersectionObserver
-
-function initObserver() {
-	let highlightClass = 'highlight';
-	const highlightBlocks = document.querySelectorAll('#channel-blocks li')
-
-	highlightBlocks.forEach((element) => {
-		let sectionObserver = new IntersectionObserver(([entry]) => {
-			if (entry.isIntersecting) {
-				console.log('intersecting!')
-				element.classList.add(highlightClass);
-			} else {
-				element.classList.remove(highlightClass);
-			}
-		}, {
-			root: null, // 'null' defaults to the viewport
-			rootMargin: '-25% 0% -25% 0%',
-		});
-
-		sectionObserver.observe(element);
-	});
-}
-
-initObserver();
 
 
 
@@ -287,8 +263,33 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 		renderBlock(blockData) // Pass the single block’s data to the render function.
 
 	})
+
+	initObserver()
 })
 
+
+// IntersectionObserver
+
+function initObserver() {
+	let highlightClass = 'highlight';
+	const highlightBlocks = document.querySelectorAll('#channel-blocks li')
+	
+	highlightBlocks.forEach((element) => {
+		console.log(element)
+		let sectionObserver = new IntersectionObserver(([entry]) => {
+			if (entry.isIntersecting) {
+				element.classList.add(highlightClass);
+			} else {
+				element.classList.remove(highlightClass);
+			}
+		}, {
+			root: null, // 'null' defaults to the viewport
+			rootMargin: '-2% 0% -2% 0%',
+		});
+
+		sectionObserver.observe(element);
+	});
+}
 
 
 		
