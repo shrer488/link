@@ -29,7 +29,6 @@ let placeChannelInfo = (channelData) => {
 // Then our big function for specific-block-type rendering:
 let renderBlock = (blockData) => {
 	
-	console.log(blockData)
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.querySelector('#channel-blocks')
 
@@ -67,7 +66,7 @@ let renderBlock = (blockData) => {
 		<li class="image-block">
 		<img  alt="${blockData.image.alt_text}" src="${ blockData.image.large.src_2x }">
 		<section class="metadata">
-		<h2>Created at</h2>
+		<h2>Created</h2>
 		<p>${new Date(blockData.created_at).toLocaleDateString()}</p>
 		</section>
 		</li>
@@ -93,7 +92,6 @@ let renderBlock = (blockData) => {
 	// Uploaded (not linked) media…
 	else if (blockData.type == 'Attachment') {
 		let contentType = blockData.attachment.content_type // Save us some repetition.
-		console.log(contentType)
 
 		// Uploaded videos!
 		if (contentType.includes('video')) {

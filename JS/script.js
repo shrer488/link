@@ -52,28 +52,85 @@ function filterBlocksByClass(blockClass) {
     })
 }
 
-showAllButton?.addEventListener('click', () => filterBlocksByClass('all'))
-showImagesButton?.addEventListener('click', () => filterBlocksByClass('image-block'))
-showTextButton?.addEventListener('click', () => filterBlocksByClass('text-block'))
-showLinksButton?.addEventListener('click', () => filterBlocksByClass('link-block'))
-showOtherButton?.addEventListener('click', () => filterBlocksByClass('other-block'))
+
+// function to remove the class
+// here we are 
+// 1. adding all the buttons in the control list to an array 'controlsList'
+// 2. checking each of these buttons to see if they have class 'active-content'
+// 3. removing 'active-content' from all of them
+function removeActiveClass(){
+    const controlsList = document.querySelectorAll('.controls-content li button')
+    console.log(controlsList)
+
+    controlsList.forEach(element => {
+        console.log(element.classList)
+        if(element.classList.contains( 'active-content')){
+            element.classList.remove('active-content')
+        }
+    });
+}
+
+
+// function to click button and filter for each filter option
+// function buttonClick(button){
+//     filterBlocksByClass('all')
+//     removeActiveClass(button)
+//     button.classList.add('active-list')
+// }
+
+
+
+showAllButton?.addEventListener('click', () =>{
+    filterBlocksByClass('all')
+    removeActiveClass()
+    showAllButton.classList.toggle('active-content')
+} 
+)
+
+showImagesButton?.addEventListener('click', () => {
+    filterBlocksByClass('image-block')
+    removeActiveClass()
+    showImagesButton.classList.toggle('active-content')
+}
+)
+
+showTextButton?.addEventListener('click', () =>{
+    filterBlocksByClass('text-block')
+    removeActiveClass()
+    showTextButton.classList.toggle('active-content')
+} 
+)
+
+showLinksButton?.addEventListener('click', () => {
+    filterBlocksByClass('link-block')
+    removeActiveClass()
+    showLinksButton.classList.toggle('active-content')
+}
+)
+
+showOtherButton?.addEventListener('click', () => {
+    filterBlocksByClass('other-block')
+    removeActiveClass()
+    showOtherButton.classList.toggle('active-content')
+}
+)
 
 
 // adding butterflyVision
-// let butterflyVisionButton = document.querySelector('.butterfly-vision-button')
+let butterflyVisionButton = document.querySelector('.butterfly-vision-button')
 
-// butterflyVisionButton.addEventListener('click', () => {
-//     collectionDialog.butterflyVision()
-// })
+butterflyVisionButton.addEventListener('click', () => {
+    collectionDialog.butterflyVision()
+})
 
-// function butterflyVision() {
-//     // select all items inside channel-blocks 
-//     const allItems = document.querySelectorAll('#channel-blocks li')
-//     allItems.forEach(item => {
-//          item.classList.add('butterfly-vision')
+function butterflyVision() {
+    // select all items inside channel-blocks 
+    const allItems = document.querySelectorAll('#channel-blocks li')
+    allItems.forEach(item => {
+         item.classList.add('butterfly-vision')
 
-//     })
-// }
+    })
+}
 
 // responsive menu bar
 // in mobile menu bar is hidden in the filter icon
