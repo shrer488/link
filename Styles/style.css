@@ -444,6 +444,15 @@
                            }
                        }
 
+                       .controls{
+                        .mobile-controls{
+                            filter: invert(100%) brightness(200%);
+                        }
+
+                        
+                        
+                       }
+
                         .controls-content{
                             li:hover{
                                 filter: invert(100%) brightness(200%);

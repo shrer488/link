@@ -139,6 +139,7 @@ let controlsContent = document.querySelector('.controls-content')
 mobileControls.addEventListener('click', ()=>{
     
     controlsContent.classList.toggle('display')
+    mobileControls.classList.toggle('active-content')
 })
 
 
