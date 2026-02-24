@@ -264,6 +264,8 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 
 	})
 
+	//used gemini to figure out where to call the function
+	//apparently the API had not fetched the data yet for the highlightBlocks in the function to be filled, so it was getting 0 values and the function was not working. Now after putting the function directly in the fetch function, we can get the data.
 	initObserver()
 })
 
@@ -272,8 +274,11 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 
 function initObserver() {
 	let highlightClass = 'highlight';
+
+	//highlightBlocks is basically an array of all the elements in the arena file
 	const highlightBlocks = document.querySelectorAll('#channel-blocks li')
 	
+	//here we are going through each of the elements from the array and checking if they are intersecting with the viewport. If it is we add a highlight class (our glowy effect) else it is removed.
 	highlightBlocks.forEach((element) => {
 		console.log(element)
 		let sectionObserver = new IntersectionObserver(([entry]) => {
@@ -284,7 +289,7 @@ function initObserver() {
 			}
 		}, {
 			root: null, // 'null' defaults to the viewport
-			rootMargin: '-2% 0% -2% 0%',
+			rootMargin: '-60% -60% -60% -60%',
 		});
 
 		sectionObserver.observe(element);
