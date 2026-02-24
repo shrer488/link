@@ -18,7 +18,7 @@
       --blur-background-color: rgba(47, 62, 94, 0.26);
       --blur-background-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       --blur-background-backdrop-filter: blur(9.4px);
-                         
+                            
     }
     
     body{
@@ -116,7 +116,7 @@
 
 
                 .content{
-                    
+                        
                         button{
                             padding-block: 0.3rem;
                             padding-inline: 0.8rem;
@@ -157,7 +157,6 @@
                         overflow-y: auto; /* to enable scrolling when the content exceeds the viewport height. */
                         padding: var(--spacing);
                         width: 100vw;
-        
 
                        
                         .top-bar, .controls{
@@ -192,10 +191,30 @@
                             align-items: center;
                             gap: 0.5rem;
                             width: fit-content;
-                            /* padding: 0.2rem; */
+                            padding: 0.4rem;
+                            background: rgba(255, 255, 255, 0.333);
+                            border-radius: 2rem;
                             
+
                             button{
                                 border: none;
+                            }
+
+                            li:hover{
+                                filter: brightness(1) saturate(1.2);
+                                    background: rgba(255, 255, 255, 0.636);
+                                    box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
+                                   
+                                    button{
+                                        background: white;
+                                        
+                                    }
+
+                            }
+
+                            li:active{
+                                        background: white;
+
                             }
                         }
                         
@@ -215,7 +234,6 @@
                             /* giving style to the content */
                             li{
                                     border-radius: 8rem;
-                                    filter: brightness(1.2) saturate(0.7);
 
                                     /* Used Gemini to get a blurred object so it looks a bit nostalgic and dreamy. The blur is done in a way that the center of the image is more visible and the edges are more blurred so it gives a nice glowing effect to the image. */
                                     mix-blend-mode:color-burn;
@@ -224,7 +242,12 @@
                                     filter: blur(0.1rem) brightness(1) saturate(1.2);
                                     background: rgba(255, 255, 255, 0.636);
                                     box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
-                            }
+                                    transition: filter 1s ease, 
+                                                box-shadow 0.8s ease, 
+                                                border-radius 0.8s ease, 
+                                                mix-blend-mode 0.8s ease;
+
+                                }
 
                            
 
@@ -233,7 +256,8 @@
                                 filter: blur(0) brightness(1) saturate(1);
                                 box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
                                 mask-image: none;
-                                border-radius: none;
+                                border-radius: 0;
+                                
                             }
 
                             &.highlight { /* When the class is applied with JS! */
@@ -248,7 +272,7 @@
                             /* separating the style for different content types */
                             .image-block{
                                 .metadata{
-                                    display: block;
+                                    display: inline-block;
                                     transform: translateX(-30%) translateY(50%);
                                     background: rgba(255, 255, 255, 0.636);
                                     box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
@@ -256,13 +280,19 @@
                                     p{
                                         max-width: 18rem;
                                         margin: 0;
+                                        font-weight: 500;
+
                                     }
                                 }
 
-                                .metadata:nth-child(5n + 1){
-                                    transform: translateX(50%);
+                               /* moving all the meta data on the first column of the grid to the right so they are always in frame  */
+                                &:nth-child(5n + 1) {
+                                    .metadata {
+                                        transform: translateX(50%) translateY(50%); 
+                                    }
                                 }
                             }
+                            
 
                             .img:hover{
                                 .metadata{
@@ -270,7 +300,7 @@
                             }
                             }
 
-                            .text-block{ 
+                            .text-block, .metadata p{ 
                                 
                                 p{
                                     text-align: center;
@@ -291,13 +321,105 @@
                                     font-weight: 500;
                             }
 
-                            .other-block:hover{
 
-                                &.video{
-                                    height: 18rem;
+                            
+                            
+                            .pdf-block, .link-block{
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                gap: var(--spacing);
+
+                                a{
+                                    border: var(--border-width) dotted var(--text-color);
+                                    border-radius: 2rem; 
                                 }
                             }
                             
+                            /* PDF design */
+
+                            .pdf-block{
+
+                                .pdf-details{
+                                    display: none;
+                                }
+
+                                a{ 
+                                    overflow: hidden;  
+                                    text-align: center;
+                                    max-height: 18rem;
+                                }
+                                
+                                img{
+                                    /* padding: 0.5rem; */
+                                    border-radius: 2rem; 
+                                    display: block; 
+                                    width: 100%;
+                                    }
+
+                            }
+
+                            .pdf-block:hover{
+                                    display: flex;
+                                    flex-direction: column;
+                                    
+                                    .pdf-details{
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                        gap: 2rem;
+
+                                        img{
+                                            max-width: 1.8rem;
+                                        }
+
+                                        h2{
+                                            display: block;
+                                        color: var(--secondary-text-color);
+                                        font-size: 1.1rem;
+                                        text-align: center;
+                                        }
+                                    }
+                            }
+                            
+                            /* Link design  */
+                            .link-block{
+                                
+                                a{
+                                    display: flex;
+                                    gap: 1rem;
+                                     padding: 1rem;
+                                }
+
+                                a:hover{
+                                    background: white;
+                                }
+
+                                picture{
+                                    img{
+                                        overflow: hidden;
+                                        border-radius: 2rem; 
+                                        border: var(--border-width) dotted var(--text-color);
+                                        max-height: 18rem;
+                                    }
+                                   
+                                }
+                            }
+
+                            /* Video design */
+                            .video-block{
+                                width: fit-content;
+
+                                iframe, video{
+                                    border: var(--border-width) dotted var(--text-color);
+                                    border-radius: 2rem; 
+                                    overflow: hidden;
+                                    /* box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2); */
+                                    max-height: 18rem;
+                                   width: 100%;
+                                }
+                            }
+                        
 
                              /* adding filter to the content */
                             .filter{
@@ -392,6 +514,19 @@ body{
                                 justify-self: start;
 	                            align-self: start;
                             }
+
+                            
+                            .pdf-block:hover{
+                                    flex-direction: row;
+
+                                    .pdf-details{
+
+                                        h2{
+                                            text-align: left;
+                                        }
+                                    }
+                            }
+
                 }
             }
         }

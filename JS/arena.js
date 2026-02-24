@@ -29,6 +29,7 @@ let placeChannelInfo = (channelData) => {
 // Then our big function for specific-block-type rendering:
 let renderBlock = (blockData) => {
 	
+	console.log(blockData.type)
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.querySelector('#channel-blocks')
 
@@ -46,7 +47,7 @@ let renderBlock = (blockData) => {
 					</picture>
 					
 				</figure>
-				<p><a class="metadata" href="${ blockData.source.url }">See the original ↗</a></p>
+				<p><a class="metadata" href="${ blockData.source.url }"><img src="Images/icon.svg">See the original <img src="Images/icon.svg"></a></p>
 			</li>
 			`
 
@@ -91,14 +92,15 @@ let renderBlock = (blockData) => {
 	// Uploaded (not linked) media…
 	else if (blockData.type == 'Attachment') {
 		let contentType = blockData.attachment.content_type // Save us some repetition.
+		console.log(contentType)
 
 		// Uploaded videos!
 		if (contentType.includes('video')) {
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
-				<li class="other-block">
-					<video class="videos" controls src="${ blockData.attachment.url }"></video>
+				<li class="other-block video-block">
+					<video controls src="${ blockData.attachment.url }"></video>
 				</li>
 				`
 
@@ -110,12 +112,16 @@ let renderBlock = (blockData) => {
 
 		// Uploaded PDFs!
 		else if (contentType.includes('pdf')) {
-			console.log(contentType)
+			
 			let pdfItem =
 				`
-				<li class="other-block">
+				<li class="other-block pdf-block">
+					<section class="pdf-details">
+					<img src="Images/icon.svg">
+					<h2>${blockData.title}</h2>
+					</section>
 					<a href=" ${blockData.attachment.url} ">
- 					${blockData.title}
+ 					<img src = "${blockData.image.src}">
 					</a>
 				</li>
 				`
@@ -151,7 +157,7 @@ let renderBlock = (blockData) => {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li class="other-block video">
+				<li class="other-block video-block">
 					${ blockData.embed.html }
 				</li>
 				`
