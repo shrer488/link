@@ -120,17 +120,8 @@ showOtherButton?.addEventListener('click', () => {
 let butterflyVisionButton = document.querySelector('.butterfly-vision-button')
 
 butterflyVisionButton.addEventListener('click', () => {
-    collectionDialog.butterflyVision()
+    collectionDialog.classList.add('butterfly-version')
 })
-
-function butterflyVision() {
-    // select all items inside channel-blocks 
-    const allItems = document.querySelectorAll('#channel-blocks li')
-    allItems.forEach(item => {
-         item.classList.add('butterfly-vision')
-
-    })
-}
 
 // responsive menu bar
 // in mobile menu bar is hidden in the filter icon
@@ -139,6 +130,7 @@ let mobileControls= document.querySelector('.mobile-controls')
 let controlsContent = document.querySelector('.controls-content')
 
 mobileControls.addEventListener('click', ()=>{
+    
     controlsContent.classList.toggle('display')
 })
 
@@ -150,24 +142,4 @@ mobileControls.addEventListener('click', ()=>{
 
 
 
-// IntersectionObserver
-let highlightClass = 'highlight';
 
-function initObserver() {
-    const highlightBlocks = document.querySelectorAll('#channel-blocks li');
-    
-    highlightBlocks.forEach((block) => {
-        let sectionObserver = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                block.classList.add(highlightClass);
-            } else {
-                block.classList.remove(highlightClass);
-            }
-        }, {
-            root: null, // 'null' defaults to the viewport
-            rootMargin: '-25% 0% -25% 0%',
-        });
-
-        sectionObserver.observe(block);
-    });
-}

@@ -430,7 +430,43 @@
                     }
 
                     .butterfly-version{
-                        background:rgb(101 141 203 / 30%);
+                        background:rgba(2, 12, 27, 0.807);
+
+                        #channel-blocks{
+                            li{
+                                border-radius: 8rem;
+                                    mix-blend-mode:normal;
+                                    mask-image: none;
+                                    /* You can also use a filter to blur the whole thing slightly first */
+                                    filter:
+                                saturate(350%)
+                                contrast(160%)
+                                brightness(120%)
+                                hue-rotate(210deg)
+                                invert(5%);
+                                    background: none;
+                                    box-shadow: none;
+                                    
+                                    /* added transition so when the user hovers on the object it is not abrupt */
+                                    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+                            }
+
+                            li:hover{
+                                mix-blend-mode: normal;
+                                filter: 
+                                saturate(350%)
+                                contrast(160%)
+                                brightness(120%)
+                                hue-rotate(210deg)
+                                invert(5%);;
+                                box-shadow: none;
+                                mask-image: none;
+                                border-radius: 0;
+                            }
+
+                            
+
+                        }
                     }
                 }
                     
