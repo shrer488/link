@@ -289,7 +289,7 @@ function initObserver() {
 			}
 		}, {
 			root: null, // 'null' defaults to the viewport
-			rootMargin: '-60% -60% -60% -60%',
+			rootMargin: '-30% -35% -30% -35%'
 		});
 
 		sectionObserver.observe(element);
