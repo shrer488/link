@@ -120,8 +120,15 @@ showOtherButton?.addEventListener('click', () => {
 let butterflyVisionButton = document.querySelector('.butterfly-vision-button')
 
 butterflyVisionButton.addEventListener('click', () => {
-    collectionDialog.classList.add('butterfly-version')
+
+    if(collectionDialog.classList.contains('butterfly-version')){
+        collectionDialog.classList.remove('butterfly-version')
+    }
+    else{
+        collectionDialog.classList.toggle('butterfly-version')
+    }
 })
+
 
 // responsive menu bar
 // in mobile menu bar is hidden in the filter icon

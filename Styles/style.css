@@ -317,8 +317,6 @@
                                     font-weight: 500;
                             }
 
-
-                            
                             
                             .pdf-block, .link-block{
                                 display: flex;
@@ -432,6 +430,19 @@
                     .butterfly-version{
                         background:rgba(2, 12, 27, 0.807);
 
+                       .top-bar {
+
+                           button{
+                               /* border:  var(--border-width) solid white; */
+                               /* color: white; */
+                               background: white;
+                           }
+                       }
+
+                        .controls-content{
+                            
+                        }
+
                         #channel-blocks{
                             li{
                                 border-radius: 8rem;
@@ -464,8 +475,74 @@
                                 border-radius: 0;
                             }
 
-                            
+                            .text-block, .metadata p{ 
+                                p{
+                                    color: white;
+                                }
+                            }
 
+                            .text-block:hover, .other-block:hover{
+                                 background: none;
+                                    box-shadow: none;
+                                    color: white;
+                            }
+
+                            .image-block{
+                                .metadata{
+                                    background:none;
+                                    box-shadow: none;
+
+                                    p{
+                                        color:white;
+                                    }
+                                }
+                            }
+
+                            .pdf-block:hover{
+                                
+                                        h2{
+                                        color: white;
+                                        }
+                                    }
+                            }
+                            
+                            /* Link design  */
+                            .link-block{
+                                
+                                a{
+                                    display: flex;
+                                    gap: 1rem;
+                                     padding: 1rem;
+                                }
+
+                                a:hover{
+                                    background: white;
+                                }
+
+                                picture{
+                                    img{
+                                        overflow: hidden;
+                                        border-radius: 2rem; 
+                                        border: var(--border-width) dotted var(--text-color);
+                                        max-height: 18rem;
+                                    }
+                                   
+                                }
+                            }
+
+                            /* Video design */
+                            .video-block{
+                                width: fit-content;
+
+                                iframe, video{
+                                    border: var(--border-width) dotted var(--text-color);
+                                    border-radius: 2rem; 
+                                    overflow: hidden;
+                                    /* box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2); */
+                                    max-height: 18rem;
+                                   width: 100%;
+                                }
+                            }
                         }
                     }
                 }
