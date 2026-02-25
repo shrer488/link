@@ -280,7 +280,7 @@
                             .image-block{
 
                                 .metadata{
-                                    display: grid;
+                                    display: none;
                                     justify-content: center;
                                     justify-self: center;
                                     text-align: center;
@@ -288,6 +288,11 @@
                                     margin-block-start: var(--spacing);
                                     background: var(--glowy-background);
                                     box-shadow: var(--glowy-box-shadow);
+                                    border-radius: 4rem;
+
+                                    position: absolute;
+                                    left: 50%;
+                                    transform: translateX(-50%);
 
                                     p{
                                         max-width: 18rem;
@@ -296,9 +301,9 @@
                                 }
                             }
                             
-                            .img-block:hover{
+                            .image-block:hover{
                                 .metadata{
-                                    display: block;
+                                    display: grid;
                                 }
                             }
 
@@ -600,6 +605,7 @@ body{
                             grid-template-columns: repeat(5, 25rem);
                             gap: calc(var(--spacing)*18);
                             
+                            
                             li:nth-child(5n){
                                 padding-inline-end: var(--spacing);
                             }
@@ -619,6 +625,7 @@ body{
                                     flex-direction: row;
 
                                     .pdf-details{
+                                        align-items: start;
 
                                         h2{
                                             text-align: left;
@@ -660,6 +667,48 @@ body{
 
             .content{
 
+            }
+        }
+    }
+}
+@media (width>1400px) {
+    :root{
+        font-size: 1rem;
+
+        --spacing:2rem;
+
+        --h1-size:4rem;
+    }
+
+    body{
+        main{
+            .hero{
+                .content{
+                    dialog{
+                        #channel-blocks{
+                             grid-template-columns: repeat(4, 20rem);
+                             gap: calc(var(--spacing)*14);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (width>1800px) {
+    
+
+    body{
+        main{
+            .hero{
+                .content{
+                    dialog{
+                        #channel-blocks{
+                             grid-template-columns: repeat(5, 32rem);
+                             gap: calc(var(--spacing)*14);
+                        }
+                    }
+                }
             }
         }
     }
