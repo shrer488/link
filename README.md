@@ -4,9 +4,9 @@ Butterflies have often held varying significance in art and culture; death, life
 
 <p><em>Typography & Interaction Project 3: Links</em></p>
 <h3>Contributors</h3>
-  Curator: <a href =''>Zara</a><br>
-  Designer/Developer: <a href =''>Riya</a><br>
-  Arena: 
+  Curator: <a href ='https://www.are.na/zarah-yaqub/channels'>Zara</a><br>
+  Designer/Developer: <a href ='https://www.are.na/riya-shrestha-ohjw70so-wu/channels'>Riya</a><br>
+  Arena: https://www.are.na/channel/butterflies-e_zebeltj7k
 <hr>
 <h2>Design</h2>
 <p>When I received this topic, I realized I hadn't seen a butterfly in ages. It had become a distant memory. This made me want to explore the connection between butterflies and remembrance, and the way we search for meaning within our memories.
