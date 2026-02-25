@@ -258,8 +258,6 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 
 	// Loop through the nested `.data` array (list).
 	json.data.forEach((blockData) => {
-		// console.log(blockData) // The data for a single block.
-
 		renderBlock(blockData) // Pass the single block’s data to the render function.
 
 	})
@@ -280,7 +278,7 @@ function initObserver() {
 	
 	//here we are going through each of the elements from the array and checking if they are intersecting with the viewport. If it is we add a highlight class (our glowy effect) else it is removed.
 	highlightBlocks.forEach((element) => {
-		console.log(element)
+	
 		let sectionObserver = new IntersectionObserver(([entry]) => {
 			if (entry.isIntersecting) {
 				element.classList.add(highlightClass);

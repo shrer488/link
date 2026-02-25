@@ -60,10 +60,8 @@ function filterBlocksByClass(blockClass) {
 // 3. removing 'active-content' from all of them
 function removeActiveClass(){
     const controlsList = document.querySelectorAll('.controls-content li button')
-    console.log(controlsList)
 
     controlsList.forEach(element => {
-        console.log(element.classList)
         if(element.classList.contains( 'active-content')){
             element.classList.remove('active-content')
         }
