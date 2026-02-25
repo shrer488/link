@@ -64,7 +64,7 @@
                     }
                 }
 
-                The hero content at the center of the page
+                /* The hero content at the center of the page */
                 .hero-text{
                     display: flex;
                     flex-direction: column;
@@ -72,6 +72,7 @@
                     align-items: center;
                     gap: calc(var(--spacing)/2);
 
+                    /* Butterflies, description stuffs */
                     .hero-content{
                         display: flex;
                         flex-direction: column;
