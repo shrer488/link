@@ -278,10 +278,13 @@
                             /* IMAGE block */
 
                             .image-block{
-                                text-align: center;
 
                                 .metadata{
-                                    display: inline-block;
+                                    display: grid;
+                                    justify-content: center;
+                                    justify-self: center;
+                                    text-align: center;
+                                    gap: 0.2rem;
                                     margin-block-start: var(--spacing);
                                     background: var(--glowy-background);
                                     box-shadow: var(--glowy-box-shadow);
