@@ -15,6 +15,7 @@
 
       scroll-behavior: smooth;
 
+      /* this is the bluish background effect for the dialog box  */
       --blur-background-color: rgba(47, 62, 94, 0.26);
       --blur-background-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       --blur-background-backdrop-filter: blur(9.4px);
@@ -29,6 +30,9 @@
     body{
         main{
             .hero{
+
+                /* ------------- BEFORE THE POP UP --------------  */
+
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -36,15 +40,13 @@
                 height: 100svh;
                 padding: var(--spacing);
                 
+                /* The arena links and the contributors info at the top of the page  */
                 .external-links{
                     display: flex;
                     width: 100%;
                     justify-content: space-between;
 
-                    
-
                     .designer{
-
                         *{
                             text-align: right;
                         }
@@ -56,22 +58,19 @@
                     }
 
                     #channel-link:hover{
-                         background: var(--blur-background-color);
+                        background: var(--blur-background-color);
                         box-shadow: var(--blur-background-box-shadow);
                         backdrop-filter: var(--blur-background-backdrop-filter);
                     }
                 }
 
+                The hero content at the center of the page
                 .hero-text{
                     display: flex;
                     flex-direction: column;
                     text-align: center;
                     align-items: center;
                     gap: calc(var(--spacing)/2);
-
-                    .butterfly-image{
-                        /* margin-block-end: var(--spacing); */
-                    }
 
                     .hero-content{
                         display: flex;
@@ -106,10 +105,7 @@
                         p+p{
                             font-weight: 600;
                         }
-    
                     }
-                    
-                    
                 }
                 
 
@@ -141,7 +137,7 @@
                         }
 
                 
-                    /* Actual pop up body of the modal. This is where the content list is displayed. */
+                    /* ------------- AFTER THE POP UP --------------  */
                     
                     dialog{
                         /* Added a frosty blurred background for modal */
@@ -154,7 +150,6 @@
         
                         /* Was having trouble with the modal not taking full height so asked chatgpt.  */
                         /* Apparently the dialog is inside a container with limited height and it was inheriting that height so I think this code makes it cover the entire viewport by defining its position and moving it to the top of the screen.  */
-                        /* position: fixed; */
                         inset: 0; 
                         z-index: 2;
                         overflow-y: auto; /* to enable scrolling when the content exceeds the viewport height. */
@@ -173,16 +168,11 @@
                         .top-bar{
                             display: flex;
                             justify-content: space-between;
-                            right: 0;
-                            /* align-items: center; */
-                            width: 100%;
-                            /* max-width: 40rem; */
-                            /* padding: var(--spacing); */
                         }
                         
                         .controls{
-                            top: 66%;
-                            
+                            top: 66%; /* to move the controls to the bottom of the page */
+
                             .mobile-controls{
                                 margin-block-start: var(--spacing);
                             }
@@ -200,9 +190,7 @@
                             width: fit-content;
                             padding: 0.4rem;
                             background: rgba(255, 255, 255, 0.333);
-                            border-radius: 2rem;
                             
-
                             button{
                                 border: none;
                             }
@@ -214,14 +202,11 @@
                                    
                                     button{
                                         background: white;
-                                        
                                     }
-
                             }
 
                             li:active{
-                                        background: white;
-
+                                    background: white;
                             }
                         }
                         
@@ -412,7 +397,6 @@
                                     border: var(--border-width) dotted var(--text-color);
                                     border-radius: 2rem; 
                                     overflow: hidden;
-                                    /* box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2); */
                                     max-height: 18rem;
                                    width: 100%;
                                 }
@@ -430,20 +414,18 @@
                         
                         
                     }
-
+                    
+                    /* This is a class for getting the butterfly vision effect that gets added to the dialog from the JS. Basically it is overwriting the colors and filter in the dialog class. */
                     .butterfly-version{
                         background:rgba(2, 12, 27, 0.807);
 
                         .top-bar button, .mobile-controls{
                                filter: invert(100%) brightness(200%);
                         }
-                       .top-bar {
 
+                       .top-bar {
                            button{
-                               /* border:  var(--border-width) solid white; */
-                               /* color: white; */
-                               /* filter: invert(100%) brightness(200%); */
-                           }
+                               }
 
                            button:hover{
                             background: white;
@@ -451,22 +433,11 @@
                            }
                        }
 
-                       .controls{
-                        .mobile-controls{
-                            /* filter: invert(100%) brightness(200%); */
-                        }
-
-                        
-                        
-                       }
-
                         .controls-content{
                             li:hover{
                                 filter: invert(100%) brightness(200%);
                                     background: none;
                                     box-shadow: none;
-                                   
-
                             }
                         }
 
@@ -515,7 +486,8 @@
                                 }
                             }
 
-                            .pdf-block:hover{
+                            .pdf-block:hover, .pdf-block{
+
                                 .pdf-details{
                                     img{
                                         filter: invert(100%) brightness(200%);

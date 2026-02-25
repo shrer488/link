@@ -53,7 +53,7 @@ function filterBlocksByClass(blockClass) {
 }
 
 
-// function to remove the class
+// function to remove the active state in the controls-content
 // here we are 
 // 1. adding all the buttons in the control list to an array 'controlsList'
 // 2. checking each of these buttons to see if they have class 'active-content'
@@ -71,52 +71,32 @@ function removeActiveClass(){
 }
 
 
-// function to click button and filter for each filter option
-// function buttonClick(button){
-//     filterBlocksByClass('all')
-//     removeActiveClass(button)
-//     button.classList.add('active-list')
-// }
 
+// I used Gemini for shorterning the code
+// Basically before I had a long and repeated list of function which had same code just a different variable so I asked Gemini to shorten it and remove the DRY code.
+// What is happening?
+// You have your filters array with a key (btn and type) : value ('.show-images','image-block' ....) pair. These filters get called one by one by the 'for each' function below. And then the other functions get called which filters the content and changes the state of the buttons in the controls-content (our menu)
+const filters = [
+    { btn: '.show-all', type: 'all' },
+    { btn: '.show-images', type: 'image-block' },
+    { btn: '.show-texts', type: 'text-block' },
+    { btn: '.show-links', type: 'link-block' },
+    { btn: '.show-others', type: 'other-block' }
+];
 
-
-showAllButton?.addEventListener('click', () =>{
-    filterBlocksByClass('all')
-    removeActiveClass()
-    showAllButton.classList.toggle('active-content')
-} 
-)
-
-showImagesButton?.addEventListener('click', () => {
-    filterBlocksByClass('image-block')
-    removeActiveClass()
-    showImagesButton.classList.toggle('active-content')
-}
-)
-
-showTextButton?.addEventListener('click', () =>{
-    filterBlocksByClass('text-block')
-    removeActiveClass()
-    showTextButton.classList.toggle('active-content')
-} 
-)
-
-showLinksButton?.addEventListener('click', () => {
-    filterBlocksByClass('link-block')
-    removeActiveClass()
-    showLinksButton.classList.toggle('active-content')
-}
-)
-
-showOtherButton?.addEventListener('click', () => {
-    filterBlocksByClass('other-block')
-    removeActiveClass()
-    showOtherButton.classList.toggle('active-content')
-}
-)
+filters.forEach(({ btn, type }) => {
+    const buttonElement = document.querySelector(btn);
+    
+    buttonElement?.addEventListener('click', () => {
+        filterBlocksByClass(type); //filtering the items in the list acc to the type
+        removeActiveClass(); //removing previously active button in the controls-content
+        buttonElement.classList.add('active-content'); //adding active state to the active button
+    });
+});
 
 
 // adding butterflyVision
+// this is just the working of the butterfly vision button. When button is clicked first time it adds .butterfly-version class to dialog, and if it is active and clicked again it removes it from the dialog.
 let butterflyVisionButton = document.querySelector('.butterfly-vision-button')
 
 butterflyVisionButton.addEventListener('click', () => {

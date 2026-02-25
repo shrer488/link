@@ -289,7 +289,7 @@ function initObserver() {
 			}
 		}, {
 			root: null, // 'null' defaults to the viewport
-			rootMargin: '-30% -35% -30% -35%'
+			rootMargin: '-30% -35% -30% -35%' //this is what defines the area of interection. I kept it small (30ish) and not (70ish) because I wanted the area in phone to be very precise otherwise all the elements were glowing at once.
 		});
 
 		sectionObserver.observe(element);
