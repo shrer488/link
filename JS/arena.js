@@ -264,7 +264,7 @@ fetchJson(`https://api.are.na/v3/channels/${channelSlug}/contents?per=100&sort=p
 
 	//used gemini to figure out where to call the function
 	//apparently the API had not fetched the data yet for the highlightBlocks in the function to be filled, so it was getting 0 values and the function was not working. Now after putting the function directly in the fetch function, we can get the data.
-	initObserver()
+	// initObserver()
 })
 
 

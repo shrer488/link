@@ -238,15 +238,24 @@
 
                             /* giving style to the content */
                             li{
-                                    border-radius: 8rem;
+                                    /* border-radius: 8rem; */
                                     
                                     /* Used Gemini to get a blurred object so it looks a bit nostalgic and dreamy. The blur is done in a way that the center of the image is more visible and the edges are more blurred so it gives a nice glowing effect to the image. */
 
                                     mix-blend-mode:color-burn;
-                                    mask-image: radial-gradient(circle, black 20%, rgba(0, 0, 0, 0) 80%); /* this is what defines how much of the element to show */
+
+                                    /* this is what defines how much of the element to show*/
+                                    mask-image: radial-gradient(circle, black 20%, rgba(0, 0, 0, 0) 80%),
+                                    linear-gradient(to right, transparent, black 20%),
+                                    linear-gradient(to left, transparent, black 20%),
+                                    linear-gradient(to bottom, transparent, black 20%),
+                                    linear-gradient(to top, transparent, black 20%); 
+                                    mask-composite: intersect;
+
                                     filter: blur(0.1rem) brightness(1) saturate(1.2);
                                     background:var(--glowy-background);
                                     box-shadow: var(--glowy-box-shadow);
+                                   
                                     
                                     /* added transition so when the user hovers on the object it is not abrupt */
                                     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -258,38 +267,39 @@
                             li:hover, .highlight {
                                 mix-blend-mode: normal;
                                 filter: blur(0) brightness(1) saturate(1);
-                                box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
+                                box-shadow: var(--glowy-box-shadow);
                                 mask-image: none;
                                 border-radius: 0;
                             }
                            
 
-                            /* separating the style for different content types */
+                            /*  --- DIFFERENT CSS FOR DIFFERENT CONTENT --- */
+
+                            /* IMAGE block */
+
                             .image-block{
                                 text-align: center;
+
                                 .metadata{
                                     display: inline-block;
                                     margin-block-start: var(--spacing);
-                                    background: rgba(255, 255, 255, 0.636);
-                                    box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
+                                    background: var(--glowy-background);
+                                    box-shadow: var(--glowy-box-shadow);
 
                                     p{
                                         max-width: 18rem;
-                                        margin: 0;
                                         font-weight: 500;
-                                        color: var(--secondary-text-color);
-
                                     }
                                 }
                             }
                             
-
-                            .img:hover{
-                                
+                            .img-block:hover{
                                 .metadata{
                                     display: block;
+                                }
                             }
-                            }
+
+                            /* TEXT block */
 
                             .text-block, .metadata p{ 
                                 
@@ -301,17 +311,18 @@
                                 }
                             }
 
-                            .other-block{
-                                max-height: 18rem;
-                            }
+                            
 
                             .text-block:hover, .other-block:hover{
-                                 background: rgba(255, 255, 255, 0.636);
-                                    box-shadow: 0px 0px 40px 50px rgba(255, 255, 255, 0.636);
-                                    color: var(--text-color);
-                                    font-weight: 500;
+                                background: var(--glowy-background);
+                                box-shadow: var(--glowy-box-shadow);
+                                color: var(--text-color);
+                                font-weight: 500;
+                                border-radius: 4rem;
                             }
+                            
 
+                            /* PDF block */
                             
                             .pdf-block, .link-block{
                                 display: flex;
@@ -325,7 +336,6 @@
                                 }
                             }
                             
-                            /* PDF design */
 
                             .pdf-block{
 
@@ -340,7 +350,6 @@
                                 }
                                 
                                 img{
-                                    /* padding: 0.5rem; */
                                     border-radius: 2rem; 
                                     display: block; 
                                     width: 100%;
@@ -364,14 +373,15 @@
 
                                         h2{
                                             display: block;
-                                        color: var(--secondary-text-color);
-                                        font-size: 1.1rem;
-                                        text-align: center;
+                                            color: var(--secondary-text-color);
+                                            font-size: 1.1rem;
+                                            text-align: center;
                                         }
                                     }
                             }
                             
-                            /* Link design  */
+                            /* LINK block  */
+                            
                             .link-block{
                                 
                                 a{
@@ -408,6 +418,10 @@
                                 }
                             }
                         
+
+                            .other-block{
+                                max-height: 18rem;
+                            }
 
                              /* adding filter to the content */
                             .filter{
@@ -493,7 +507,7 @@
                             }
 
                             .pdf-block:hover, .pdf-block{
-
+                                
                                 .pdf-details{
                                     img{
                                         filter: invert(100%) brightness(200%);
