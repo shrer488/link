@@ -89,7 +89,7 @@
                             font-size: var(--h1-size);
                             font-weight: 700;
                             display: block;
-                            width: fit-content;
+                            inline-size: fit-content;
                             
                         }
                         
@@ -151,7 +151,7 @@
                         z-index: 2;
                         overflow-y: auto; /* to enable scrolling when the content exceeds the viewport height. */
                         padding: var(--spacing);
-                        width: 100vw;
+                        inline-size: 100vw;
 
                        
                         .top-bar, .controls{
@@ -359,7 +359,7 @@
                                 img{
                                     border-radius: 2rem; 
                                     display: block; 
-                                    width: 100%;
+                                    inline-size: 100%;
                                     }
 
                             }
@@ -421,7 +421,7 @@
                                     border-radius: 2rem; 
                                     overflow: hidden;
                                     max-height: 18rem;
-                                   width: 100%;
+                                   inline-size: 100%;
                                 }
                             }
                         
