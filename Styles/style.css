@@ -172,10 +172,14 @@
                         }
                         
                         .controls{
-                            top: 66%; /* to move the controls to the bottom of the page */
+                            top: 64%;/*  to move the controls to the bottom of the page */
+                            display: grid;
+                            justify-content: start;
+                            bottom: var(--spacing);
 
                             .mobile-controls{
                                 /* this is only seen in mobile  */
+                                
                                 margin-block-start: var(--spacing);
                             }
                         }
