@@ -81,8 +81,9 @@
                         gap: 0.5rem;
 
                         h1,p{
+                            /* to give the blur effect to the paragraphs */
                             background: rgba(255, 255, 255, 0.636);
-                            box-shadow: 0px 0px 20px 12px rgba(255, 255, 255, 0.636);
+                            box-shadow: 0px 0px 20px 12px rgba(255, 255, 255, 0.636); 
                         }
 
                         h1{
@@ -128,13 +129,14 @@
                             backdrop-filter: var(--blur-background-backdrop-filter);
                         }
 
+                        /* Controls Menu in the pop up */
                         button, .controls-content{
                             border: var(--border-width) solid var(--text-color);
                             border-radius: 2rem;
                         }
-
+                        
                         .active-content{
-                            background: white;
+                            background: white; 
                         }
 
                 
@@ -175,11 +177,12 @@
                             top: 66%; /* to move the controls to the bottom of the page */
 
                             .mobile-controls{
+                                /* this is only seen in mobile  */
                                 margin-block-start: var(--spacing);
                             }
                         }
 
-                           
+                        /* this is to toggle the visibility of the menu controls when we click on the filter button in mobile  */
                         .display{
                             visibility: hidden;
                         }
