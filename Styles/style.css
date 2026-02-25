@@ -438,12 +438,12 @@
                             .filter{
                                 display: none;
                             }
-
-                            
-                            
                         }
                         
-                        
+                    }
+
+                    .human-vision-icon{
+                        display: none;
                     }
                     
                     /* This is a class for getting the butterfly vision effect that gets added to the dialog from the JS. Basically it is overwriting the colors and filter in the dialog class. */
@@ -659,12 +659,6 @@ body{
     body{
         main{
             .hero{
-                .hero-text{
-                }
-                
-                h1{
-                }
-
                 p{
                         margin: 0 auto;
                         max-width: 40rem;

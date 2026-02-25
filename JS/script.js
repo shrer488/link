@@ -96,14 +96,20 @@ filters.forEach(({ btn, type }) => {
 // adding butterflyVision
 // this is just the working of the butterfly vision button. When button is clicked first time it adds .butterfly-version class to dialog, and if it is active and clicked again it removes it from the dialog.
 let butterflyVisionButton = document.querySelector('.butterfly-vision-button')
+let butterflyIcon = document.querySelector('.butterfly-vision-icon')
+let eyeIcon = document.querySelector('.human-vision-icon')
 
 butterflyVisionButton.addEventListener('click', () => {
 
     if(collectionDialog.classList.contains('butterfly-version')){
         collectionDialog.classList.remove('butterfly-version')
+        butterflyIcon.style.display ='block'
+        eyeIcon.style.display ='none'
     }
     else{
         collectionDialog.classList.toggle('butterfly-version')
+        butterflyIcon.style.display ='none'
+        eyeIcon.style.display ='block'
     }
 })
 
