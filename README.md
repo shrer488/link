@@ -3,7 +3,7 @@
 Butterflies have often held varying significance in art and culture; death, life, and rebirth have all been represented. This collection explores butterflies in these different contexts.</p>
 
 <p><em>Typography & Interaction Project 3: Links</em></p>
-<em>Contributors</em>
+<h3>Contributors</h3>
   Curator: <a href =''>Zara</a><br>
   Designer/Developer: <a href =''>Riya</a><br>
   Arena: 
