@@ -466,11 +466,6 @@
 
                        .controls{
 
-                            .active-content{
-                               filter: invert(100%) brightness(200%);
-                                background: none;
-                            }
-
                            .controls-content{
                                li:hover{
                                    filter: invert(100%) brightness(200%);
@@ -637,6 +632,7 @@ body{
                                     flex-direction: row;
 
                                     .pdf-details{
+                                        
                                         align-items: start;
 
                                         h2{
