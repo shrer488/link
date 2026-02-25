@@ -179,7 +179,6 @@
 
                             .mobile-controls{
                                 /* this is only seen in mobile  */
-                                
                                 margin-block-start: var(--spacing);
                             }
                         }
@@ -230,7 +229,7 @@
                         #channel-blocks{
                             display: grid;
                             grid-template-columns: repeat(4, 16rem);
-                            gap: calc(var(--spacing)*16);
+                            gap: calc(var(--spacing)*14);
                             align-items: center;
                             padding: var(--spacing);
                             padding-block-end: calc(var(--spacing)*4);
@@ -465,13 +464,22 @@
                            }
                        }
 
-                        .controls-content{
-                            li:hover{
-                                filter: invert(100%) brightness(200%);
-                                    background: none;
-                                    box-shadow: none;
+                       .controls{
+
+                            .active-content{
+                               filter: invert(100%) brightness(200%);
+                                background: none;
                             }
-                        }
+
+                           .controls-content{
+                               li:hover{
+                                   filter: invert(100%) brightness(200%);
+                                       background: none;
+                                       box-shadow: none;
+                               }
+                           }
+                       }
+
 
                         #channel-blocks{
                             li{
