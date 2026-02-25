@@ -16,4 +16,4 @@ Finally, the dialog backgrounds are deliberately blurred, meant to feel as thin 
 </p>
 <hr>
 <em>Context</em>
-<p>This website was designed and developed by <a href="https://www.linkedin.com/in/riya-shrestha-010944178/">Riya Shrestha</a> in 2025 as part of Typography and Interaction at Parsons School of Design.</p>
+<p>This website was designed and developed by <a href="https://www.linkedin.com/in/riya-shrestha-010944178/">Riya Shrestha</a> in 2026 as part of Typography and Interaction at Parsons School of Design.</p>
